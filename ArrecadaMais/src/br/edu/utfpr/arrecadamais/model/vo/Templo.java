@@ -12,4 +12,17 @@ package br.edu.utfpr.arrecadamais.model.vo;
  */
 public class Templo {
     
+    private int codTemplo;
+    private String NomeTemplo;
+    private Cidade cidade;
+    private Estado estado;
+    private String rua;
+    private int numero;
+    private int capacidade;
+    
+
+    public int getTemploId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
