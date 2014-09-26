@@ -15,7 +15,7 @@ import javax.persistence.Persistence;
  *
  * @author JoãoHenrique
  */
-public class ConexaoBD {
+public class ConexaoBD { 
 
     private static ConexaoBD bd;
     private Connection connection;
