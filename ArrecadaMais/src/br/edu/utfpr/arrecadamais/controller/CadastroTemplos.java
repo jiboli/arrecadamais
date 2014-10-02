@@ -13,7 +13,10 @@ package br.edu.utfpr.arrecadamais.controller;
 public class CadastroTemplos {
 
     public CadastroTemplos() {
+
         String aa = "aa";
+        String a = "";
     }
-      
+    
+
 }
