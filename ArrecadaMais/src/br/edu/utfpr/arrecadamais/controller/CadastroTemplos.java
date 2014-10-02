@@ -11,5 +11,9 @@ package br.edu.utfpr.arrecadamais.controller;
  * @author JoãoHenrique
  */
 public class CadastroTemplos {
+
+    public CadastroTemplos() {
+    String a = "";
+    }
     
 }
