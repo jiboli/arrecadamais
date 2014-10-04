@@ -6,10 +6,31 @@
 
 package br.edu.utfpr.arrecadamais.model.vo;
 
-/**
- *
- * @author JoãoHenrique
- */
+
 public class Frase extends EntidadePrincipal{
+    
+    private String frase;
+    private String autor;
+
+    public Frase() {
+    }
+
+    public String getFrase() {
+        return frase;
+    }
+
+    public void setFrase(String frase) {
+        this.frase = frase;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+    
+    
     
 }

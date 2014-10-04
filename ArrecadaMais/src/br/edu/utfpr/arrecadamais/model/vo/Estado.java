@@ -12,4 +12,18 @@ package br.edu.utfpr.arrecadamais.model.vo;
  */
 class Estado extends EntidadePrincipal{
     
+    private String nome;
+
+    public Estado() {
+    
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
 }
