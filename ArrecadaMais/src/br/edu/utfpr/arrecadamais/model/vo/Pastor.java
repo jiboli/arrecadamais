@@ -10,6 +10,6 @@ package br.edu.utfpr.arrecadamais.model.vo;
  *
  * @author JoãoHenrique
  */
-public class Pastor {
+public class Pastor extends EntidadePrincipal{
     
 }

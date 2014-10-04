@@ -10,6 +10,6 @@ package br.edu.utfpr.arrecadamais.model.vo;
  *
  * @author JoãoHenrique
  */
-class Estado {
+class Estado extends EntidadePrincipal{
     
 }

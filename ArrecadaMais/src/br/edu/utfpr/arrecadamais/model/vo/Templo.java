@@ -9,6 +9,8 @@ package br.edu.utfpr.arrecadamais.model.vo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 /**
@@ -17,44 +19,32 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Templos")
-public class Templo {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class Templo extends EntidadePrincipal{
     
-    @Id
-    @GeneratedValue
-    private int TemploId;
-    private String NomeTemplo;
+    
+    private String nome;
     private Cidade cidade;
-    private Estado estado;
     private String rua;
     private int numero;
     private int capacidade;
     
     public Templo(){
-        this.setTemploId(0);
-        this.setNomeTemplo("");
+        this.setId(0);
+        this.setNome("");
         this.setCidade(new Cidade());
-        this.setEstado(new Estado());
         this.setRua("");
         this.setNumero(0);
         this.setCapacidade(0);
         
     }
 
-    public void setTemploId(int TemploId) {
-        this.TemploId = TemploId;
-    }
-    
-
-    public int getTemploId() {
-        return this.TemploId;
+    public String getNome() {
+        return nome;
     }
 
-    public String getNomeTemplo() {
-        return NomeTemplo;
-    }
-
-    public void setNomeTemplo(String NomeTemplo) {
-        this.NomeTemplo = NomeTemplo;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Cidade getCidade() {
@@ -63,14 +53,6 @@ public class Templo {
 
     public void setCidade(Cidade cidade) {
         this.cidade = cidade;
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
     }
 
     public String getRua() {

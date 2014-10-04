@@ -10,6 +10,30 @@ package br.edu.utfpr.arrecadamais.model.vo;
  *
  * @author JoãoHenrique
  */
-class Cidade {
+class Cidade extends EntidadePrincipal{
+    
+    private String nome;
+    private Estado estado;
+
+    public Cidade() {
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+    
+    
     
 }

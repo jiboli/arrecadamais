@@ -14,8 +14,7 @@ public class CadastroTemplos {
 
     public CadastroTemplos() {
 
-        String aa = "aa";
-        String a = "";
+
     }
     
 

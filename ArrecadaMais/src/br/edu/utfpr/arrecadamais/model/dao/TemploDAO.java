@@ -24,7 +24,7 @@ public class TemploDAO {
         manager.persist(templo);
         manager.getTransaction().commit();
         
-        return templo.getTemploId();
+        return templo.getId();
         
     }
     
@@ -44,7 +44,7 @@ public class TemploDAO {
         
         manager.getTransaction().begin();
         manager.remove(manager.getReference(Templo.class, 
-                templo.getTemploId()));
+                templo.getId()));
         manager.getTransaction().commit();
         
         
