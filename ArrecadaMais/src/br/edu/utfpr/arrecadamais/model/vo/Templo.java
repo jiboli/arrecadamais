@@ -6,11 +6,16 @@
 
 package br.edu.utfpr.arrecadamais.model.vo;
 
+import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -18,15 +23,27 @@ import javax.persistence.Table;
  * @author JoãoHenrique
  */
 @Entity
-@Table(name = "Templos")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class Templo extends EntidadePrincipal{
+@Table(name = "templos")
+public class Templo implements Serializable{
     
+    @Id
+    @GeneratedValue
+    private int id;
     
+    @Column
     private String nome;
+    
+    @ManyToOne
+    @JoinColumn(name = "id", insertable = false, updatable = false)
     private Cidade cidade;
+    
+    @Column
     private String rua;
+    
+    @Column
     private int numero;
+    
+    @Column
     private int capacidade;
     
     public Templo(){
@@ -37,6 +54,14 @@ public class Templo extends EntidadePrincipal{
         this.setNumero(0);
         this.setCapacidade(0);
         
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {

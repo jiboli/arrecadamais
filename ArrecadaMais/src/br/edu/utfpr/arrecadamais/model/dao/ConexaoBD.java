@@ -25,7 +25,7 @@ public class ConexaoBD {
         try {
             
             this.factory = Persistence
-                    .createEntityManagerFactory("ArrecadaMaisPU");
+                    .createEntityManagerFactory("jpa");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

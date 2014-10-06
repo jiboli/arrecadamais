@@ -6,10 +6,29 @@
 
 package br.edu.utfpr.arrecadamais.model.vo;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
-public class Frase extends EntidadePrincipal{
+
+@Entity
+@Table(name = "frases")
+public class Frase implements Serializable{
     
+    @Id
+    @GeneratedValue
+    private int id;
+    
+    @Column
     private String frase;
+    
+    @Column
     private String autor;
 
     public Frase() {
@@ -29,6 +48,14 @@ public class Frase extends EntidadePrincipal{
 
     public void setAutor(String autor) {
         this.autor = autor;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     

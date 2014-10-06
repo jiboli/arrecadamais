@@ -5,8 +5,6 @@
  */
 package br.edu.utfpr.arrecadamais.model.dao;
 
-import br.edu.utfpr.arrecadamais.model.vo.EntidadePrincipal;
-import br.edu.utfpr.arrecadamais.model.vo.Templo;
 import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -16,7 +14,7 @@ import javax.persistence.Query;
  *
  * @author torto
  */
-public class DAODinamico<T extends EntidadePrincipal> {
+public class DAODinamico<T> {
 
     ConexaoBD conexao = ConexaoBD.getInstance();
 
@@ -24,7 +22,7 @@ public class DAODinamico<T extends EntidadePrincipal> {
 
     }
 
-    public int inserir(T objeto) throws SQLException {
+    public T inserir(T objeto) throws SQLException {
         EntityManager manager = ConexaoBD.getInstance()
                 .getEntityManager();
 
@@ -32,7 +30,7 @@ public class DAODinamico<T extends EntidadePrincipal> {
         manager.persist(objeto);
         manager.getTransaction().commit();
 
-        return objeto.getId();
+        return objeto;
 
     }
 
@@ -51,23 +49,23 @@ public class DAODinamico<T extends EntidadePrincipal> {
                 .getEntityManager();
 
         manager.getTransaction().begin();
-        manager.remove(objeto.getId());
+        manager.remove(objeto);
         manager.getTransaction().commit();
 
     }
 
-    public T buscarById(T objeto) {
+    public T buscarById(Class classe, int id) {
         EntityManager manager = ConexaoBD.getInstance()
                 .getEntityManager();
 
-        return (T) manager.find(objeto.getClass(), objeto.getId());
+        return (T) manager.find(classe, id);
     }
 
-    public List<T> buscarListaById(T objeto) {
+    public List<T> buscarListaById(Class classe, int id) {
         EntityManager manager = ConexaoBD.getInstance()
                 .getEntityManager();
 
-       Query query = manager.createQuery("select tabela from " + objeto.getClass().getName() + " where id = " + objeto.getId());
+       Query query = manager.createQuery("select tabela from " + classe.getName() + " tabela where id = " + id);
        
         return (List<T>) query.getResultList();
     }
