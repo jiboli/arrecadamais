@@ -30,18 +30,20 @@ public class CadastroTemplos extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         btnNomeTemplo = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         edtCidade = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         cmbEstado = new javax.swing.JComboBox();
         jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jPanel11 = new javax.swing.JPanel();
+        jTextField2 = new javax.swing.JTextField();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jSpinner1 = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
         btnCadastrar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
@@ -50,30 +52,30 @@ public class CadastroTemplos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Templo");
-        setMaximumSize(new java.awt.Dimension(504, 300));
         setMinimumSize(new java.awt.Dimension(504, 300));
-        setPreferredSize(new java.awt.Dimension(514, 300));
+        setPreferredSize(new java.awt.Dimension(471, 200));
         setResizable(false);
         setType(java.awt.Window.Type.POPUP);
 
         jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
 
-        jLabel2.setText("Nome: ");
-        jPanel3.add(jLabel2);
-
+        btnNomeTemplo.setText("Nome");
         btnNomeTemplo.setMinimumSize(new java.awt.Dimension(60, 40));
         btnNomeTemplo.setName(""); // NOI18N
         btnNomeTemplo.setPreferredSize(new java.awt.Dimension(400, 20));
+        btnNomeTemplo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNomeTemploActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnNomeTemplo);
 
         jPanel2.add(jPanel3);
 
         jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.LINE_AXIS));
 
-        jLabel3.setText("Cidade: ");
-        jPanel5.add(jLabel3);
-
-        edtCidade.setPreferredSize(new java.awt.Dimension(83, 20));
+        edtCidade.setText("Cidade");
+        edtCidade.setPreferredSize(new java.awt.Dimension(89, 20));
         jPanel5.add(edtCidade);
 
         jPanel2.add(jPanel5);
@@ -115,25 +117,42 @@ public class CadastroTemplos extends javax.swing.JFrame {
 
         jPanel2.add(jPanel7);
 
-        jLabel5.setText("Endereço:");
-        jPanel8.add(jLabel5);
+        jPanel10.setPreferredSize(new java.awt.Dimension(400, 29));
 
-        jPanel9.setPreferredSize(new java.awt.Dimension(380, 40));
+        jTextField1.setText("Rua");
+        jTextField1.setPreferredSize(new java.awt.Dimension(300, 20));
+        jPanel10.add(jTextField1);
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+        jPanel11.setPreferredSize(new java.awt.Dimension(20, 21));
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 21, Short.MAX_VALUE)
         );
 
-        jPanel8.add(jPanel9);
+        jPanel10.add(jPanel11);
 
-        jPanel2.add(jPanel8);
+        jTextField2.setText("Número");
+        jTextField2.setPreferredSize(new java.awt.Dimension(65, 20));
+        jPanel10.add(jTextField2);
+
+        jPanel2.add(jPanel10);
+
+        jPanel12.setPreferredSize(new java.awt.Dimension(400, 28));
+
+        jLabel2.setText("Capacidade de Fiéis:");
+        jPanel12.add(jLabel2);
+
+        jSpinner1.setPreferredSize(new java.awt.Dimension(70, 20));
+        jPanel12.add(jSpinner1);
+
+        jPanel2.add(jPanel12);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
@@ -156,6 +175,10 @@ public class CadastroTemplos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnNomeTemploActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNomeTemploActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNomeTemploActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -169,17 +192,19 @@ public class CadastroTemplos extends javax.swing.JFrame {
     private javax.swing.JTextField edtCidade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

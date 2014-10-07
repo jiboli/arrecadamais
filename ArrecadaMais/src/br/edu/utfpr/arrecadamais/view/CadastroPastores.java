@@ -28,21 +28,144 @@ public class CadastroPastores extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        btnNomeTemplo = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        edtCidade = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        cmbEstado = new javax.swing.JComboBox();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jPanel11 = new javax.swing.JPanel();
+        jTextField2 = new javax.swing.JTextField();
+        jPanel8 = new javax.swing.JPanel();
+        btnCadastrar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setText("Cadastrar Pastor");
+        jPanel4.add(jLabel1);
+
+        jPanel1.add(jPanel4, java.awt.BorderLayout.NORTH);
+
+        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
+
+        btnNomeTemplo.setText("Nome");
+        btnNomeTemplo.setMinimumSize(new java.awt.Dimension(60, 40));
+        btnNomeTemplo.setName(""); // NOI18N
+        btnNomeTemplo.setPreferredSize(new java.awt.Dimension(400, 20));
+        btnNomeTemplo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNomeTemploActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnNomeTemplo);
+
+        jPanel2.add(jPanel3);
+
+        jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.LINE_AXIS));
+
+        edtCidade.setText("Cidade");
+        edtCidade.setPreferredSize(new java.awt.Dimension(89, 20));
+        jPanel5.add(edtCidade);
+
+        jPanel2.add(jPanel5);
+
+        jPanel6.setPreferredSize(new java.awt.Dimension(48, 21));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 48, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 21, Short.MAX_VALUE)
         );
+
+        jPanel2.add(jPanel6);
+
+        jLabel4.setText("Estado: ");
+        jPanel2.add(jLabel4);
+
+        cmbEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbEstado.setPreferredSize(new java.awt.Dimension(150, 20));
+        jPanel2.add(cmbEstado);
+
+        jPanel7.setPreferredSize(new java.awt.Dimension(54, 21));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 54, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 21, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel7);
+
+        jPanel10.setPreferredSize(new java.awt.Dimension(400, 29));
+
+        jTextField1.setText("Rua");
+        jTextField1.setPreferredSize(new java.awt.Dimension(300, 20));
+        jPanel10.add(jTextField1);
+
+        jPanel11.setPreferredSize(new java.awt.Dimension(20, 21));
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 21, Short.MAX_VALUE)
+        );
+
+        jPanel10.add(jPanel11);
+
+        jTextField2.setText("Número");
+        jTextField2.setPreferredSize(new java.awt.Dimension(65, 20));
+        jPanel10.add(jTextField2);
+
+        jPanel2.add(jPanel10);
+
+        jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
+
+        jPanel8.setLayout(new java.awt.GridLayout());
+
+        btnCadastrar.setText("Cadastrar");
+        jPanel8.add(btnCadastrar);
+
+        btnCancelar.setText("Cancelar");
+        jPanel8.add(btnCancelar);
+
+        jPanel1.add(jPanel8, java.awt.BorderLayout.SOUTH);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNomeTemploActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNomeTemploActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNomeTemploActionPerformed
 
     /**
      * @param args the command line arguments
@@ -50,5 +173,24 @@ public class CadastroPastores extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JTextField btnNomeTemplo;
+    private javax.swing.JComboBox cmbEstado;
+    private javax.swing.JTextField edtCidade;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
