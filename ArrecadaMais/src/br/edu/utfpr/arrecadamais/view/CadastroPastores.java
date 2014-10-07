@@ -6,6 +6,8 @@
 
 package br.edu.utfpr.arrecadamais.view;
 
+import org.jdatepicker.JDatePicker;
+
 /**
  *
  * @author JoãoHenrique
@@ -28,6 +30,7 @@ public class CadastroPastores extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDateComponentFactory1 = new org.jdatepicker.JDateComponentFactory();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -43,14 +46,21 @@ public class CadastroPastores extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jPanel11 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        jPanel12 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         btnCadastrar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(446, 250));
         setResizable(false);
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(446, 180));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -119,19 +129,19 @@ public class CadastroPastores extends javax.swing.JFrame {
 
         jPanel2.add(jPanel7);
 
-        jPanel10.setPreferredSize(new java.awt.Dimension(400, 29));
+        jPanel10.setPreferredSize(new java.awt.Dimension(400, 55));
 
         jTextField1.setText("Rua");
         jTextField1.setPreferredSize(new java.awt.Dimension(300, 20));
         jPanel10.add(jTextField1);
 
-        jPanel11.setPreferredSize(new java.awt.Dimension(20, 21));
+        jPanel11.setPreferredSize(new java.awt.Dimension(90, 21));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
+            .addGap(0, 90, Short.MAX_VALUE)
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,15 +150,53 @@ public class CadastroPastores extends javax.swing.JFrame {
 
         jPanel10.add(jPanel11);
 
-        jTextField2.setText("Número");
-        jTextField2.setPreferredSize(new java.awt.Dimension(65, 20));
-        jPanel10.add(jTextField2);
+        jLabel2.setText("Data de Nascimento: ");
+        jPanel10.add(jLabel2);
+
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        jFormattedTextField1.setPreferredSize(new java.awt.Dimension(90, 20));
+        jPanel10.add(jFormattedTextField1);
+
+        jPanel9.setPreferredSize(new java.awt.Dimension(40, 21));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 21, Short.MAX_VALUE)
+        );
+
+        jPanel10.add(jPanel9);
+
+        jLabel3.setText("Salário: ");
+        jPanel10.add(jLabel3);
+
+        jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+        jFormattedTextField2.setPreferredSize(new java.awt.Dimension(50, 20));
+        jPanel10.add(jFormattedTextField2);
 
         jPanel2.add(jPanel10);
 
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel12);
+
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
-        jPanel8.setLayout(new java.awt.GridLayout());
+        jPanel8.setLayout(new java.awt.GridLayout(1, 0));
 
         btnCadastrar.setText("Cadastrar");
         jPanel8.add(btnCadastrar);
@@ -178,11 +226,17 @@ public class CadastroPastores extends javax.swing.JFrame {
     private javax.swing.JTextField btnNomeTemplo;
     private javax.swing.JComboBox cmbEstado;
     private javax.swing.JTextField edtCidade;
+    private org.jdatepicker.JDateComponentFactory jDateComponentFactory1;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -190,7 +244,8 @@ public class CadastroPastores extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+ 
 }
