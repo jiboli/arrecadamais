@@ -6,7 +6,7 @@
 
 package br.edu.utfpr.arrecadamais.view;
 
-import org.jdatepicker.JDatePicker;
+
 
 /**
  *
@@ -30,7 +30,6 @@ public class CadastroPastores extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDateComponentFactory1 = new org.jdatepicker.JDateComponentFactory();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -226,7 +225,6 @@ public class CadastroPastores extends javax.swing.JFrame {
     private javax.swing.JTextField btnNomeTemplo;
     private javax.swing.JComboBox cmbEstado;
     private javax.swing.JTextField edtCidade;
-    private org.jdatepicker.JDateComponentFactory jDateComponentFactory1;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;

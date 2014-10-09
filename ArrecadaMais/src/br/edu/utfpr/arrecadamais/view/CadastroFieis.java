@@ -34,11 +34,10 @@ public class CadastroFieis extends javax.swing.JFrame {
         btnCadastrar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         btnNomeTemplo = new javax.swing.JTextField();
-        jPanel5 = new javax.swing.JPanel();
         edtCidade = new javax.swing.JTextField();
-        jPanel6 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         cmbEstado = new javax.swing.JComboBox();
         jPanel7 = new javax.swing.JPanel();
@@ -49,12 +48,26 @@ public class CadastroFieis extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jFormattedTextField4 = new javax.swing.JFormattedTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jFormattedTextField5 = new javax.swing.JFormattedTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(436, 300));
+        setPreferredSize(new java.awt.Dimension(436, 500));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -64,7 +77,7 @@ public class CadastroFieis extends javax.swing.JFrame {
         getContentPane().add(jPanel4, java.awt.BorderLayout.NORTH);
 
         jPanel8.setPreferredSize(new java.awt.Dimension(400, 25));
-        jPanel8.setLayout(new java.awt.GridLayout());
+        jPanel8.setLayout(new java.awt.GridLayout(1, 0));
 
         btnCadastrar.setText("Cadastrar");
         jPanel8.add(btnCadastrar);
@@ -74,7 +87,8 @@ public class CadastroFieis extends javax.swing.JFrame {
 
         getContentPane().add(jPanel8, java.awt.BorderLayout.SOUTH);
 
-        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel1.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         btnNomeTemplo.setText("Nome");
         btnNomeTemplo.setMinimumSize(new java.awt.Dimension(60, 40));
@@ -85,39 +99,33 @@ public class CadastroFieis extends javax.swing.JFrame {
                 btnNomeTemploActionPerformed(evt);
             }
         });
-        jPanel3.add(btnNomeTemplo);
-
-        jPanel2.add(jPanel3);
-
-        jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel1.add(btnNomeTemplo);
 
         edtCidade.setText("Cidade");
         edtCidade.setPreferredSize(new java.awt.Dimension(89, 20));
-        jPanel5.add(edtCidade);
+        jPanel1.add(edtCidade);
 
-        jPanel2.add(jPanel5);
+        jPanel13.setPreferredSize(new java.awt.Dimension(40, 21));
 
-        jPanel6.setPreferredSize(new java.awt.Dimension(48, 21));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 21, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel6);
+        jPanel1.add(jPanel13);
 
         jLabel4.setText("Estado: ");
-        jPanel2.add(jLabel4);
+        jPanel1.add(jLabel4);
 
         cmbEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbEstado.setPreferredSize(new java.awt.Dimension(150, 20));
-        jPanel2.add(cmbEstado);
+        jPanel1.add(cmbEstado);
 
         jPanel7.setPreferredSize(new java.awt.Dimension(54, 21));
 
@@ -132,7 +140,9 @@ public class CadastroFieis extends javax.swing.JFrame {
             .addGap(0, 21, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel7);
+        jPanel1.add(jPanel7);
+
+        jPanel2.add(jPanel1);
 
         jPanel10.setPreferredSize(new java.awt.Dimension(400, 55));
         jPanel10.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
@@ -170,22 +180,90 @@ public class CadastroFieis extends javax.swing.JFrame {
         jFormattedTextField2.setPreferredSize(new java.awt.Dimension(50, 20));
         jPanel10.add(jFormattedTextField2);
 
+        jPanel14.setPreferredSize(new java.awt.Dimension(30, 21));
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 21, Short.MAX_VALUE)
+        );
+
+        jPanel10.add(jPanel14);
+
         jPanel2.add(jPanel10);
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(400, 100));
-        jPanel1.setPreferredSize(new java.awt.Dimension(400, 100));
+        jPanel15.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel15.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        jLabel6.setText("Telefone: ");
-        jPanel1.add(jLabel6);
+        jLabel6.setText("CPF: ");
+        jPanel15.add(jLabel6);
 
         try {
-            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###-####")));
+            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jPanel1.add(jFormattedTextField4);
+        jFormattedTextField4.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel15.add(jFormattedTextField4);
 
-        jPanel2.add(jPanel1);
+        jLabel5.setText("Profissão: ");
+        jPanel15.add(jLabel5);
+
+        jTextField2.setPreferredSize(new java.awt.Dimension(150, 20));
+        jPanel15.add(jTextField2);
+
+        jLabel7.setText("Cargo: ");
+        jPanel15.add(jLabel7);
+
+        jTextField3.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel15.add(jTextField3);
+
+        jLabel8.setText("Escolaridade: ");
+        jPanel15.add(jLabel8);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setPreferredSize(new java.awt.Dimension(160, 20));
+        jPanel15.add(jComboBox1);
+
+        jPanel2.add(jPanel15);
+
+        jPanel11.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel11.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        jLabel9.setText("Telefone: ");
+        jPanel11.add(jLabel9);
+
+        try {
+            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField3.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel11.add(jFormattedTextField3);
+
+        jLabel10.setText("Celular:");
+        jPanel11.add(jLabel10);
+
+        try {
+            jFormattedTextField5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField5.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel11.add(jFormattedTextField5);
+
+        jPanel2.add(jPanel11);
+
+        jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel2.add(jPanel5);
+
+        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel2.add(jPanel3);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
@@ -208,16 +286,29 @@ public class CadastroFieis extends javax.swing.JFrame {
     private javax.swing.JTextField btnNomeTemplo;
     private javax.swing.JComboBox cmbEstado;
     private javax.swing.JTextField edtCidade;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
+    private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JFormattedTextField jFormattedTextField4;
+    private javax.swing.JFormattedTextField jFormattedTextField5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -227,5 +318,7 @@ public class CadastroFieis extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
