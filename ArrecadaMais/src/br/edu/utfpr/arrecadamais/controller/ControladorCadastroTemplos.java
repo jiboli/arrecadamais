@@ -6,39 +6,45 @@
 
 package br.edu.utfpr.arrecadamais.controller;
 
-import br.edu.utfpr.arrecadamais.model.vo.Pastor;
 import java.util.List;
+
 
 /**
  *
  * @author JoãoHenrique
  */
-public class ControladorCadastroPastores implements ControleClasseCRUD<Pastor>{
+import br.edu.utfpr.arrecadamais.model.vo.Templo;
+public class ControladorCadastroTemplos implements ControleClasseCRUD<Templo>{
+
+    public ControladorCadastroTemplos() {
+
+
+    }
 
     @Override
-    public Pastor inserir(Pastor objeto) {
+    public Templo inserir(Templo objeto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Pastor excluir(Pastor objeto) {
+    public Templo excluir(Templo objeto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Pastor alterar(Pastor objeto) {
+    public Templo alterar(Templo objeto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Pastor> buscarTotal() {
+    public List<Templo> buscarTotal() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Pastor buscarByID(int ID) {
+    public Templo buscarByID(int ID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   
+
 }
