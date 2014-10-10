@@ -3,43 +3,75 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.edu.utfpr.arrecadamais.controller;
 
+import br.edu.utfpr.arrecadamais.model.bo.FraseBO;
 import br.edu.utfpr.arrecadamais.model.vo.Frase;
-import java.util.List;
+import br.edu.utfpr.arrecadamais.view.CadastroFrase;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import oracle.jrockit.jfr.JFR;
 
 /**
  *
  * @author JoãoHenrique
  */
-public class ControladorCadastroFrase implements ControleClasseCRUD<Frase>{
+public class ControladorCadastroFrase implements ControleControler<Frase> {
 
-    @Override
-    public Frase inserir(Frase objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private CadastroFrase telaFrase;
+    private Frase frase;
+
+    public ControladorCadastroFrase(Frase frase) {
+        this.frase = frase;
+        
+        if(frase == null){
+            frase = new Frase();
+        } else {
+            carregaDadosTela(frase);;
+        }
+        
+        this.telaFrase = new CadastroFrase();
+        this.telaFrase.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        this.telaFrase.getBtnCancelar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cancelar();
+            }
+        });
+
+        this.telaFrase.getBtnCadastrar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                salvar();
+            }
+        });
+    }
+
+    public void cancelar() {
+//       this.telaFrase.
+    }
+
+    public void salvar() {
+        FraseBO bo = new FraseBO();
+
+        frase = carregaDadosObjeto();
+
+        bo.inserir(frase);
     }
 
     @Override
-    public Frase excluir(Frase objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Frase carregaDadosObjeto() {
+        frase.setAutor(this.telaFrase.getTextAutor().getText());
+        frase.setFrase(this.telaFrase.getTextFrase().getText());
+        return frase;
     }
 
     @Override
-    public Frase alterar(Frase objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void carregaDadosTela(Frase objeto) {
+        this.telaFrase.getTextAutor().setText(objeto.getAutor());
+        this.telaFrase.getTextFrase().setText(objeto.getFrase());
     }
 
-    @Override
-    public List<Frase> buscarTotal() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Frase buscarByID(int ID) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-    
 }

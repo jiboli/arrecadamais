@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "estados")
-class Estado implements Serializable{
+public class Estado implements Serializable{
      
     @Id
     @GeneratedValue
@@ -23,7 +23,7 @@ class Estado implements Serializable{
     
     @Column
     private String nome;
-
+    
     public Estado() {
     
     }
@@ -42,5 +42,12 @@ class Estado implements Serializable{
 
     public void setId(int id) {
         this.id = id;
+    } 
+
+    @Override
+    public String toString() {
+       return this.getNome();
     }
+    
+    
 }

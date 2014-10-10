@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.edu.utfpr.arrecadamais.view;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 /**
  *
@@ -37,8 +40,8 @@ public class CadastroFrase extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jTextField1 = new javax.swing.JTextField();
+        textFrase = new javax.swing.JTextPane();
+        textAutor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(400, 300));
@@ -53,7 +56,7 @@ public class CadastroFrase extends javax.swing.JFrame {
         jPanel1.add(jPanel4, java.awt.BorderLayout.NORTH);
 
         jPanel8.setPreferredSize(new java.awt.Dimension(400, 25));
-        jPanel8.setLayout(new java.awt.GridLayout());
+        jPanel8.setLayout(new java.awt.GridLayout(1, 0));
 
         btnCadastrar.setText("Cadastrar");
         jPanel8.add(btnCadastrar);
@@ -69,12 +72,12 @@ public class CadastroFrase extends javax.swing.JFrame {
         jPanel2.add(jLabel2);
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(380, 180));
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(textFrase);
 
         jPanel2.add(jScrollPane1);
 
-        jTextField1.setText("Autor:");
-        jPanel2.add(jTextField1);
+        textAutor.setText("Autor:");
+        jPanel2.add(textAutor);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
@@ -86,7 +89,6 @@ public class CadastroFrase extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
@@ -98,7 +100,40 @@ public class CadastroFrase extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextField textAutor;
+    private javax.swing.JTextPane textFrase;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnCadastrar() {
+        return this.btnCadastrar;
+    }
+
+    public void setBtnCadastrar(JButton btnCadastrar) {
+        this.btnCadastrar = btnCadastrar;
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public void setBtnCancelar(JButton btnCancelar) {
+        this.btnCancelar = btnCancelar;
+    }
+
+    public JTextField getTextAutor() {
+        return textAutor;
+    }
+
+    public void setTextAutor(JTextField textAutor) {
+        this.textAutor = textAutor;
+    }
+
+    public JTextPane getTextFrase() {
+        return textFrase;
+    }
+
+    public void setTextFrase(JTextPane textFrase) {
+        this.textFrase = textFrase;
+    }
+
 }

@@ -27,6 +27,9 @@ public class FraseBO implements ControleClasseCRUD<Frase>{
     @Override
     public Frase inserir(Frase objeto) {
         try {
+            if(objeto.getId() != 0){
+                dao.alterar(objeto);
+            }
             objeto = dao.inserir(objeto);
         } catch (SQLException ex) {
             ex.printStackTrace();

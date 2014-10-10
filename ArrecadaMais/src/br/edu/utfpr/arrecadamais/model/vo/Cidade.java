@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cidades")
-class Cidade implements Serializable{
+public class Cidade implements Serializable{
     
     @Id
     @GeneratedValue
@@ -27,7 +27,7 @@ class Cidade implements Serializable{
     private String nome;
     
     @ManyToOne
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "estado_id")
     private Estado estado;
 
     public Cidade() {
@@ -47,7 +47,7 @@ class Cidade implements Serializable{
 
     public void setEstado(Estado estado) {
         this.estado = estado;
-    } 
+    }
 
     public int getId() {
         return id;
@@ -56,5 +56,12 @@ class Cidade implements Serializable{
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return this.getNome();
+    }
+    
+    
     
 }
