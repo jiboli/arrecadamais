@@ -65,9 +65,17 @@ public class DAODinamico<T> {
         EntityManager manager = ConexaoBD.getInstance()
                 .getEntityManager();
 
-       Query query = manager.createQuery("select tabela from " + classe.getName() + " tabela where id = " + id);
-       
+        Query query = manager.createQuery("select tabela from " + classe.getName() + " tabela where id = " + id);
+
         return (List<T>) query.getResultList();
     }
 
+    public List<T> buscarListaByWhere(Class classe, String where) {
+        EntityManager manager = ConexaoBD.getInstance()
+                .getEntityManager();
+
+        Query query = manager.createQuery("select tabela from " + classe.getName() + " tabela where " + where);
+
+        return (List<T>) query.getResultList();
+    }
 }

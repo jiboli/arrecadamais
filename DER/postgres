@@ -17,9 +17,8 @@ CREATE TABLE IF NOT EXISTS arrecada.estados (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS arrecada.cidades (
   id INT NOT NULL PRIMARY KEY ,
-  estado_id INT NOT NULL,
   nome VARCHAR(60) NULL,
-  fk_cidade_estado_idx INT NOT NULL REFERENCES arrecada.estados(id));
+  estado_id INT NOT NULL REFERENCES arrecada.estados(id));
 
 
 -- -----------------------------------------------------
