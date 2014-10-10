@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cidades")
-class Cidade implements Serializable{
+public class Cidade implements Serializable{
     
     @Id
     @GeneratedValue

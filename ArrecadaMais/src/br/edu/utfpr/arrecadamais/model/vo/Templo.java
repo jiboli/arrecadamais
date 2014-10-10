@@ -103,7 +103,5 @@ public class Templo implements Serializable{
     public void setCapacidade(int capacidade) {
         this.capacidade = capacidade;
     }
-
-    
     
 }

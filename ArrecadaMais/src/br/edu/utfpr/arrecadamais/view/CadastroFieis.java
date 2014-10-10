@@ -6,6 +6,12 @@
 
 package br.edu.utfpr.arrecadamais.view;
 
+import java.awt.Frame;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author JoãoHenrique
@@ -15,9 +21,15 @@ public class CadastroFieis extends javax.swing.JFrame {
     /**
      * Creates new form ControladorCadastroFieis
      */
+    public CadastroFieis(Frame parent, boolean modal) {
+        super(parent, modal);
+        initComponents();
+    }
     public CadastroFieis() {
         initComponents();
     }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,34 +47,33 @@ public class CadastroFieis extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        btnNomeTemplo = new javax.swing.JTextField();
-        edtCidade = new javax.swing.JTextField();
-        jPanel13 = new javax.swing.JPanel();
+        edtNome = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         cmbEstado = new javax.swing.JComboBox();
-        jPanel7 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        cmbCidade = new javax.swing.JComboBox();
         jPanel10 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        edtEndereco = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        edtDataNascimento = new javax.swing.JFormattedTextField();
         jPanel9 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        edtRenda = new javax.swing.JFormattedTextField();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jFormattedTextField4 = new javax.swing.JFormattedTextField();
+        edtCPF = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        edtProfissao = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        edtCargo = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        cmbEscolaridade = new javax.swing.JComboBox();
         jPanel11 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        edtTelefone = new javax.swing.JFormattedTextField();
         jLabel10 = new javax.swing.JLabel();
-        jFormattedTextField5 = new javax.swing.JFormattedTextField();
+        edtCelular = new javax.swing.JFormattedTextField();
         jPanel5 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
 
@@ -90,73 +101,46 @@ public class CadastroFieis extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 60));
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        btnNomeTemplo.setText("Nome");
-        btnNomeTemplo.setMinimumSize(new java.awt.Dimension(60, 40));
-        btnNomeTemplo.setName(""); // NOI18N
-        btnNomeTemplo.setPreferredSize(new java.awt.Dimension(400, 20));
-        btnNomeTemplo.addActionListener(new java.awt.event.ActionListener() {
+        edtNome.setText("Nome");
+        edtNome.setMinimumSize(new java.awt.Dimension(60, 40));
+        edtNome.setName(""); // NOI18N
+        edtNome.setPreferredSize(new java.awt.Dimension(400, 20));
+        edtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNomeTemploActionPerformed(evt);
+                edtNomeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnNomeTemplo);
-
-        edtCidade.setText("Cidade");
-        edtCidade.setPreferredSize(new java.awt.Dimension(89, 20));
-        jPanel1.add(edtCidade);
-
-        jPanel13.setPreferredSize(new java.awt.Dimension(40, 21));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 21, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel13);
+        jPanel1.add(edtNome);
 
         jLabel4.setText("Estado: ");
         jPanel1.add(jLabel4);
 
         cmbEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cmbEstado.setPreferredSize(new java.awt.Dimension(150, 20));
+        cmbEstado.setPreferredSize(new java.awt.Dimension(100, 20));
         jPanel1.add(cmbEstado);
 
-        jPanel7.setPreferredSize(new java.awt.Dimension(54, 21));
+        jLabel11.setText("Cidade: ");
+        jPanel1.add(jLabel11);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 54, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 21, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel7);
+        cmbCidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbCidade.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel1.add(cmbCidade);
 
         jPanel2.add(jPanel1);
 
         jPanel10.setPreferredSize(new java.awt.Dimension(400, 55));
         jPanel10.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        jTextField1.setText("Rua");
-        jTextField1.setPreferredSize(new java.awt.Dimension(380, 20));
-        jPanel10.add(jTextField1);
+        edtEndereco.setText("Rua");
+        edtEndereco.setPreferredSize(new java.awt.Dimension(380, 20));
+        jPanel10.add(edtEndereco);
 
         jLabel2.setText("Data de Nascimento: ");
         jPanel10.add(jLabel2);
 
-        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        jFormattedTextField1.setPreferredSize(new java.awt.Dimension(90, 20));
-        jPanel10.add(jFormattedTextField1);
+        edtDataNascimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        edtDataNascimento.setPreferredSize(new java.awt.Dimension(90, 20));
+        jPanel10.add(edtDataNascimento);
 
         jPanel9.setPreferredSize(new java.awt.Dimension(40, 21));
 
@@ -176,9 +160,9 @@ public class CadastroFieis extends javax.swing.JFrame {
         jLabel3.setText("Renda : ");
         jPanel10.add(jLabel3);
 
-        jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
-        jFormattedTextField2.setPreferredSize(new java.awt.Dimension(50, 20));
-        jPanel10.add(jFormattedTextField2);
+        edtRenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+        edtRenda.setPreferredSize(new java.awt.Dimension(50, 20));
+        jPanel10.add(edtRenda);
 
         jPanel14.setPreferredSize(new java.awt.Dimension(30, 21));
 
@@ -204,31 +188,31 @@ public class CadastroFieis extends javax.swing.JFrame {
         jPanel15.add(jLabel6);
 
         try {
-            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            edtCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextField4.setPreferredSize(new java.awt.Dimension(100, 20));
-        jPanel15.add(jFormattedTextField4);
+        edtCPF.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel15.add(edtCPF);
 
         jLabel5.setText("Profissão: ");
         jPanel15.add(jLabel5);
 
-        jTextField2.setPreferredSize(new java.awt.Dimension(150, 20));
-        jPanel15.add(jTextField2);
+        edtProfissao.setPreferredSize(new java.awt.Dimension(150, 20));
+        jPanel15.add(edtProfissao);
 
         jLabel7.setText("Cargo: ");
         jPanel15.add(jLabel7);
 
-        jTextField3.setPreferredSize(new java.awt.Dimension(100, 20));
-        jPanel15.add(jTextField3);
+        edtCargo.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel15.add(edtCargo);
 
         jLabel8.setText("Escolaridade: ");
         jPanel15.add(jLabel8);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(160, 20));
-        jPanel15.add(jComboBox1);
+        cmbEscolaridade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbEscolaridade.setPreferredSize(new java.awt.Dimension(160, 20));
+        jPanel15.add(cmbEscolaridade);
 
         jPanel2.add(jPanel15);
 
@@ -239,23 +223,23 @@ public class CadastroFieis extends javax.swing.JFrame {
         jPanel11.add(jLabel9);
 
         try {
-            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+            edtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextField3.setPreferredSize(new java.awt.Dimension(100, 20));
-        jPanel11.add(jFormattedTextField3);
+        edtTelefone.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel11.add(edtTelefone);
 
         jLabel10.setText("Celular:");
         jPanel11.add(jLabel10);
 
         try {
-            jFormattedTextField5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+            edtCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextField5.setPreferredSize(new java.awt.Dimension(100, 20));
-        jPanel11.add(jFormattedTextField5);
+        edtCelular.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel11.add(edtCelular);
 
         jPanel2.add(jPanel11);
 
@@ -270,9 +254,9 @@ public class CadastroFieis extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnNomeTemploActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNomeTemploActionPerformed
+    private void edtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnNomeTemploActionPerformed
+    }//GEN-LAST:event_edtNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,17 +267,21 @@ public class CadastroFieis extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JTextField btnNomeTemplo;
+    private javax.swing.JComboBox cmbCidade;
+    private javax.swing.JComboBox cmbEscolaridade;
     private javax.swing.JComboBox cmbEstado;
-    private javax.swing.JTextField edtCidade;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
-    private javax.swing.JFormattedTextField jFormattedTextField3;
-    private javax.swing.JFormattedTextField jFormattedTextField4;
-    private javax.swing.JFormattedTextField jFormattedTextField5;
+    private javax.swing.JFormattedTextField edtCPF;
+    private javax.swing.JTextField edtCargo;
+    private javax.swing.JFormattedTextField edtCelular;
+    private javax.swing.JFormattedTextField edtDataNascimento;
+    private javax.swing.JTextField edtEndereco;
+    private javax.swing.JTextField edtNome;
+    private javax.swing.JTextField edtProfissao;
+    private javax.swing.JFormattedTextField edtRenda;
+    private javax.swing.JFormattedTextField edtTelefone;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -306,7 +294,6 @@ public class CadastroFieis extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
@@ -314,11 +301,125 @@ public class CadastroFieis extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+    
+    public JButton getBtnCancelar(){
+        return this.btnCancelar;
+    }
+
+    public void setBtnCancelar(JButton btnCancelar) {
+        this.btnCancelar = btnCancelar;
+    }
+    
+    
+
+    public JButton getBtnCadastrar() {
+        return btnCadastrar;
+    }
+
+    public void setBtnCadastrar(JButton btnCadastrar) {
+        this.btnCadastrar = btnCadastrar;
+    }
+
+    public JComboBox getCmbEscolaridade() {
+        return cmbEscolaridade;
+    }
+
+    public void setCmbEscolaridade(JComboBox cmbEscolaridade) {
+        this.cmbEscolaridade = cmbEscolaridade;
+    }
+
+    public JComboBox getCmbEstado() {
+        return cmbEstado;
+    }
+
+    public void setCmbEstado(JComboBox cmbEstado) {
+        this.cmbEstado = cmbEstado;
+    }
+
+    public JFormattedTextField getEdtCPF() {
+        return edtCPF;
+    }
+
+    public void setEdtCPF(JFormattedTextField edtCPF) {
+        this.edtCPF = edtCPF;
+    }
+
+    public JTextField getEdtCargo() {
+        return edtCargo;
+    }
+
+    public void setEdtCargo(JTextField edtCargo) {
+        this.edtCargo = edtCargo;
+    }
+
+    public JFormattedTextField getEdtCelular() {
+        return edtCelular;
+    }
+
+    public void setEdtCelular(JFormattedTextField edtCelular) {
+        this.edtCelular = edtCelular;
+    }
+
+    public JComboBox getCmbCidade() {
+        return cmbCidade;
+    }
+
+    public void setCmbCidade(JComboBox cmbCidade) {
+        this.cmbCidade = cmbCidade;
+    }
+
+    
+
+    public JFormattedTextField getEdtDataNascimento() {
+        return edtDataNascimento;
+    }
+
+    public void setEdtDataNascimento(JFormattedTextField edtDataNascimento) {
+        this.edtDataNascimento = edtDataNascimento;
+    }
+
+    public JTextField getEdtEndereco() {
+        return edtEndereco;
+    }
+
+    public void setEdtEndereco(JTextField edtEndereco) {
+        this.edtEndereco = edtEndereco;
+    }
+
+    public JTextField getEdtNome() {
+        return edtNome;
+    }
+
+    public void setEdtNome(JTextField edtNome) {
+        this.edtNome = edtNome;
+    }
+
+    public JTextField getEdtProfissao() {
+        return edtProfissao;
+    }
+
+    public void setEdtProfissao(JTextField edtProfissao) {
+        this.edtProfissao = edtProfissao;
+    }
+
+    public JFormattedTextField getEdtRenda() {
+        return edtRenda;
+    }
+
+    public void setEdtRenda(JFormattedTextField edtRenda) {
+        this.edtRenda = edtRenda;
+    }
+
+    public JFormattedTextField getEdtTelefone() {
+        return edtTelefone;
+    }
+
+    public void setEdtTelefone(JFormattedTextField edtTelefone) {
+        this.edtTelefone = edtTelefone;
+    }
+    
+    
 }
