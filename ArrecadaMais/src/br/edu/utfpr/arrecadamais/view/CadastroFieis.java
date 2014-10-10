@@ -28,21 +28,251 @@ public class CadastroFieis extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        btnCadastrar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        btnNomeTemplo = new javax.swing.JTextField();
+        edtCidade = new javax.swing.JTextField();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        cmbEstado = new javax.swing.JComboBox();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jFormattedTextField4 = new javax.swing.JFormattedTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jFormattedTextField5 = new javax.swing.JFormattedTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(436, 500));
+        setResizable(false);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setText("Cadastrar Fiel");
+        jPanel4.add(jLabel1);
+
+        getContentPane().add(jPanel4, java.awt.BorderLayout.NORTH);
+
+        jPanel8.setPreferredSize(new java.awt.Dimension(400, 25));
+        jPanel8.setLayout(new java.awt.GridLayout(1, 0));
+
+        btnCadastrar.setText("Cadastrar");
+        jPanel8.add(btnCadastrar);
+
+        btnCancelar.setText("Cancelar");
+        jPanel8.add(btnCancelar);
+
+        getContentPane().add(jPanel8, java.awt.BorderLayout.SOUTH);
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        btnNomeTemplo.setText("Nome");
+        btnNomeTemplo.setMinimumSize(new java.awt.Dimension(60, 40));
+        btnNomeTemplo.setName(""); // NOI18N
+        btnNomeTemplo.setPreferredSize(new java.awt.Dimension(400, 20));
+        btnNomeTemplo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNomeTemploActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnNomeTemplo);
+
+        edtCidade.setText("Cidade");
+        edtCidade.setPreferredSize(new java.awt.Dimension(89, 20));
+        jPanel1.add(edtCidade);
+
+        jPanel13.setPreferredSize(new java.awt.Dimension(40, 21));
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 21, Short.MAX_VALUE)
         );
+
+        jPanel1.add(jPanel13);
+
+        jLabel4.setText("Estado: ");
+        jPanel1.add(jLabel4);
+
+        cmbEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbEstado.setPreferredSize(new java.awt.Dimension(150, 20));
+        jPanel1.add(cmbEstado);
+
+        jPanel7.setPreferredSize(new java.awt.Dimension(54, 21));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 54, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 21, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel7);
+
+        jPanel2.add(jPanel1);
+
+        jPanel10.setPreferredSize(new java.awt.Dimension(400, 55));
+        jPanel10.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        jTextField1.setText("Rua");
+        jTextField1.setPreferredSize(new java.awt.Dimension(380, 20));
+        jPanel10.add(jTextField1);
+
+        jLabel2.setText("Data de Nascimento: ");
+        jPanel10.add(jLabel2);
+
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        jFormattedTextField1.setPreferredSize(new java.awt.Dimension(90, 20));
+        jPanel10.add(jFormattedTextField1);
+
+        jPanel9.setPreferredSize(new java.awt.Dimension(40, 21));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 21, Short.MAX_VALUE)
+        );
+
+        jPanel10.add(jPanel9);
+
+        jLabel3.setText("Renda : ");
+        jPanel10.add(jLabel3);
+
+        jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+        jFormattedTextField2.setPreferredSize(new java.awt.Dimension(50, 20));
+        jPanel10.add(jFormattedTextField2);
+
+        jPanel14.setPreferredSize(new java.awt.Dimension(30, 21));
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 21, Short.MAX_VALUE)
+        );
+
+        jPanel10.add(jPanel14);
+
+        jPanel2.add(jPanel10);
+
+        jPanel15.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel15.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        jLabel6.setText("CPF: ");
+        jPanel15.add(jLabel6);
+
+        try {
+            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField4.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel15.add(jFormattedTextField4);
+
+        jLabel5.setText("Profissão: ");
+        jPanel15.add(jLabel5);
+
+        jTextField2.setPreferredSize(new java.awt.Dimension(150, 20));
+        jPanel15.add(jTextField2);
+
+        jLabel7.setText("Cargo: ");
+        jPanel15.add(jLabel7);
+
+        jTextField3.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel15.add(jTextField3);
+
+        jLabel8.setText("Escolaridade: ");
+        jPanel15.add(jLabel8);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setPreferredSize(new java.awt.Dimension(160, 20));
+        jPanel15.add(jComboBox1);
+
+        jPanel2.add(jPanel15);
+
+        jPanel11.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel11.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        jLabel9.setText("Telefone: ");
+        jPanel11.add(jLabel9);
+
+        try {
+            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField3.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel11.add(jFormattedTextField3);
+
+        jLabel10.setText("Celular:");
+        jPanel11.add(jLabel10);
+
+        try {
+            jFormattedTextField5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField5.setPreferredSize(new java.awt.Dimension(100, 20));
+        jPanel11.add(jFormattedTextField5);
+
+        jPanel2.add(jPanel11);
+
+        jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel2.add(jPanel5);
+
+        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel2.add(jPanel3);
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNomeTemploActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNomeTemploActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNomeTemploActionPerformed
 
     /**
      * @param args the command line arguments
@@ -51,5 +281,44 @@ public class CadastroFieis extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JTextField btnNomeTemplo;
+    private javax.swing.JComboBox cmbEstado;
+    private javax.swing.JTextField edtCidade;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextField2;
+    private javax.swing.JFormattedTextField jFormattedTextField3;
+    private javax.swing.JFormattedTextField jFormattedTextField4;
+    private javax.swing.JFormattedTextField jFormattedTextField5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

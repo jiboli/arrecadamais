@@ -28,18 +28,57 @@ public class CadastroFrase extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        btnCadastrar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+        jTextField1 = new javax.swing.JTextField();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(400, 300));
+        setResizable(false);
+
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setText("Cadastrar Frase");
+        jPanel4.add(jLabel1);
+
+        jPanel1.add(jPanel4, java.awt.BorderLayout.NORTH);
+
+        jPanel8.setPreferredSize(new java.awt.Dimension(400, 25));
+        jPanel8.setLayout(new java.awt.GridLayout());
+
+        btnCadastrar.setText("Cadastrar");
+        jPanel8.add(btnCadastrar);
+
+        btnCancelar.setText("Cancelar");
+        jPanel8.add(btnCancelar);
+
+        jPanel1.add(jPanel8, java.awt.BorderLayout.SOUTH);
+
+        jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.PAGE_AXIS));
+
+        jLabel2.setText("Insira a Frase bíblica: ");
+        jPanel2.add(jLabel2);
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(380, 180));
+        jScrollPane1.setViewportView(jTextPane1);
+
+        jPanel2.add(jScrollPane1);
+
+        jTextField1.setText("Autor:");
+        jPanel2.add(jTextField1);
+
+        jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -50,5 +89,16 @@ public class CadastroFrase extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }
