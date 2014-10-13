@@ -50,7 +50,8 @@ public class ControladorCadastroFrase implements ControleControler<Frase> {
     }
 
     public void cancelar() {
-//       this.telaFrase.
+       this.telaFrase.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.telaFrase.dispose(); // fecha a janela
     }
 
     public void salvar() {

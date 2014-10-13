@@ -5,113 +5,164 @@
  */
 package br.edu.utfpr.arrecadamais.controller;
 
+import br.edu.utfpr.arrecadamais.model.bo.CidadeBO;
+import br.edu.utfpr.arrecadamais.model.bo.EstadoBO;
 import br.edu.utfpr.arrecadamais.model.bo.FieisBO;
 import br.edu.utfpr.arrecadamais.model.vo.Cidade;
 import br.edu.utfpr.arrecadamais.model.vo.Estado;
 import br.edu.utfpr.arrecadamais.model.vo.Fieis;
-<<<<<<< HEAD
+import br.edu.utfpr.arrecadamais.model.vo.Pastor;
 import br.edu.utfpr.arrecadamais.view.CadastroFieis;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-=======
-
->>>>>>> fa3b6d2e700dde077ffaa35535b81373964fa5de
 
 /**
  *
  * @author JoãoHenrique
  */
-<<<<<<< HEAD
-public class ControladorCadastroFieis implements ControleClasseCRUD<Fieis>{
-    private CadastroFieis telaCadastro;
-    private int retorno;
-    private List<Estado> itemsEstado;
-    private List<Cidade> itemsCidade;
-    private List itemsEscolaridade;
 
-    public ControladorCadastroFieis(JFrame parent) {
-        this.telaCadastro = new CadastroFieis(parent, true);
-        this.telaCadastro.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.telaCadastro.setCmbEstado(null);
-        
-        this.telaCadastro.getBtnCancelar()
-                .addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cancelar();
-            }
-        });
-        
-        this.telaCadastro.getBtnCadastrar()
-                .addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                salvar();
-            }
-        });
-    }
-    
-    
-
-    @Override
-    public Fieis inserir(Fieis objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-=======
 public class ControladorCadastroFieis implements ControleControler<Fieis>{
->>>>>>> fa3b6d2e700dde077ffaa35535b81373964fa5de
+    private CadastroFieis telaCadastro;
+    private Fieis fiel;
+    private List<Estado> estados;
+    private List<Cidade> cidades;
+    private List itemsEscolaridade;
+    private CidadeBO cidadeBo;
+    private FieisBO fieisBo;
 
-    @Override
-    public Fieis carregaDadosObjeto() {
-        return new Fieis();
-    }
+    public ControladorCadastroFieis(Fieis fiel) {
+        this.fiel = fiel;
+        fieisBo = new FieisBO();
+        EstadoBO estadoBo = new EstadoBO();
+        cidadeBo = new CidadeBO();
+        cidades = cidadeBo.buscaListaById(1);
+        estados = estadoBo.buscarTotal();//busca todos os estados
+        
+        //verifica se o fiel foi passado como parametro
+        //para quando for editar um fiel passar ele para essa tela
+        // e apartir dela alteramos
+        if (fiel == null) {
+            //cria um novo fiel, pq eh de add um
+            fiel = new Fieis(); 
+        } else {
+            //caso fiel venha como parametro insere na tela os dados
+            carregaDadosTela(fiel);
+        }
+        
+        //tela cadastro fieles
+        this.telaCadastro = new CadastroFieis();
+        this.telaCadastro.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
+        //evento botao cancelar
+        this.telaCadastro.getBtnCancelar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cancelar();//fecha a tela
+            }
+        });
+        
+        //evento salvar fiel
+        this.telaCadastro.getBtnCadastrar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                salvar(); // salva um fiel
+            }
+        });
+        
+        //evento que buscas cidades de acordo com o estado selecionado
+        this.telaCadastro.getComboEstado().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //e.getSource eh o comobobox
+                //selectedItem eh o intem selecionado
+                //getId - pega o id do estado
+               cidades = cidadeBo.buscaListaById(((Estado)((JComboBox) e.getSource()).getSelectedItem()).getId()); 
+               telaCadastro.getComboCidade().setModel(new DefaultComboBoxModel(cidades.toArray()));// insere as cidade no combobox
+            }
+        });
+        // inseri na tela padrao as cidades e estados
+        this.telaCadastro.getComboEstado().setModel(new DefaultComboBoxModel(estados.toArray()));
+        this.telaCadastro.getComboCidade().setModel(new DefaultComboBoxModel(cidades.toArray()));
 
-    @Override
-    public void carregaDadosTela(Fieis objeto) {
-
+        //exibe a tela
+        this.telaCadastro.setVisible(true);
+        this.telaCadastro.toFront();
+        //fim do construtor
     }
     
-<<<<<<< HEAD
-    private void cancelar(){
-        this.telaCadastro.dispose();
-        
-        this.retorno =  JOptionPane.CANCEL_OPTION;
+    
+    public void cancelar() {
+        this.telaCadastro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.telaCadastro.dispose(); // fecha a janela
     }
-    private void salvar(){
-        try {
-            
+    public void salvar() {
+        //instancia um BO
+        FieisBO bo = new FieisBO();
         
-            this.carregaDadosObjeto();
-        
-            bo.inserirOuAlterarSenha(this.senha);
-            
-            JOptionPane.showMessageDialog(this.telaCadastro, 
-                    "Senha cadastrada com sucesso.");
-            
-            this.telaCadastro.dispose();
-            
-            this.retorno =  JOptionPane.OK_OPTION;
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this.telaCadastro, 
-                    ex.getMessage());
-        }
+        //gera um objeto a partir da tela
+        fiel = carregaDadosObjeto();
+
+        //insere o objeto no banco
+        bo.inserir(fiel);
     }
-private void carregaDadosTela(){
+    
+public void carregaDadosTela(Fieis objeto){
        /* this.telaCadastro.getCmbEstado().setModel(new DefaultComboBoxModel(itemsEstado));
         this.telaCadastro.getCmbEstado().getModel().setSelectedItem(this);
         this.telaCadastro.getCmbEscolaridade().setModel(new DefaultComboBoxModel(itemsEscolaridade));
         this.telaCadastro.getCmbEscolaridade().getModel().setSelectedItem(this);*/
+    //pega todos os valores do fiel e insere na tela
+        this.telaCadastro.getTextNome().setText(objeto.getNome());
+        this.telaCadastro.getTextSobrenome().setText(objeto.getSobrenome());
+        this.telaCadastro.getTextCpf().setText(objeto.getCpf());
+        this.telaCadastro.getTextRenda().setText(objeto.getRenda() + "");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String datestring = dateFormat.format(objeto.getDataNascimento());
+        this.telaCadastro.getTextDataNascimento().setText(datestring);
+        this.telaCadastro.getComboCidade().getModel().setSelectedItem(objeto.getCidade());
+        this.telaCadastro.getTextTelefone().setText(objeto.getTelefone());
+        this.telaCadastro.getTextCelular().setText(objeto.getCelular());
+        this.telaCadastro.getTextProfissao().setText(objeto.getProfissao());
+        this.telaCadastro.getTextCargo().setText(objeto.getCargo());
+        this.telaCadastro.getTextEscolaridade().setText(objeto.getEscolaridade());
+        this.telaCadastro.getTextEdereco().setText(objeto.getEndereco());
     }
-private Fieis carregaDadosObjeto(){
-        Fieis fieis = new Fieis();
+public Fieis carregaDadosObjeto(){
+        //pega todos os inputs da tela e insere no objeto fiel
+        
+        fiel.setNome(this.telaCadastro.getTextNome().getText());
+        fiel.setSobrenome(this.telaCadastro.getTextSobrenome().getText());
+        fiel.setCpf(this.telaCadastro.getTextCpf().getText());
+        fiel.setRenda(Double.parseDouble(this.telaCadastro.getTextRenda().getText()));
+        DateFormat formatter = new SimpleDateFormat("MM/dd/yy");
+        Date date = null;
+        try {
+            date = (Date) formatter.parse(this.telaCadastro.getTextDataNascimento().getText());
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
+        fiel.setDataNascimento(date);
+        fiel.setCidade((Cidade) this.telaCadastro.getComboCidade().getModel().getSelectedItem());
+        fiel.setTelefone(this.telaCadastro.getTextTelefone().getText());
+        fiel.setCelular(this.telaCadastro.getTextCelular().getText());
+        fiel.setProfissao(this.telaCadastro.getTextProfissao().getText());
+        fiel.setCargo(this.telaCadastro.getTextCargo().getText());
+        fiel.setEscolaridade(this.telaCadastro.getTextEscolaridade().getText());
+        fiel.setEndereco(this.telaCadastro.getTextEdereco().getText());
+        
+
+        return fiel;
     }
+
+
 }
-=======
-}
->>>>>>> fa3b6d2e700dde077ffaa35535b81373964fa5de
+
