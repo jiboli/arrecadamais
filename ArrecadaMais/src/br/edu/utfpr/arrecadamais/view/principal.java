@@ -5,8 +5,7 @@
  */
 package br.edu.utfpr.arrecadamais.view;
 
-import br.edu.utfpr.arrecadamais.model.dao.DAODinamico;
-import br.edu.utfpr.arrecadamais.model.vo.*;
+import br.edu.utfpr.arrecadamais.controller.ControladorCadastroPastores;
 
 /**
  *
@@ -16,14 +15,7 @@ public class principal {
 
     public static void main(String[] args) {
 //        DAODinamico<Cidad> fraseDAO = new DAODinamico<Cidade_>();
-        
-        
-        
-        try {
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        ControladorCadastroPastores a = new ControladorCadastroPastores(null);
     }
 
 }

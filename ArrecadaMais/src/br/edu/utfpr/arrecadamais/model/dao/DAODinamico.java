@@ -71,10 +71,14 @@ public class DAODinamico<T> {
     }
 
     public List<T> buscarListaByWhere(Class classe, String where) {
-        EntityManager manager = ConexaoBD.getInstance()
-                .getEntityManager();
+        EntityManager manager = ConexaoBD.getInstance().getEntityManager();
 
-        Query query = manager.createQuery("select tabela from " + classe.getName() + " tabela where " + where);
+        Query query = null;
+        if (where.isEmpty()) {
+            query = manager.createQuery("select tabela from " + classe.getName() + " tabela");
+        } else {
+            query = manager.createQuery("select tabela from " + classe.getName() + " tabela where " + where);
+        }
 
         return (List<T>) query.getResultList();
     }

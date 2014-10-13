@@ -78,4 +78,9 @@ public class CidadeBO  implements ControleClasseCRUD<Cidade>{
         return retorno;
     }
     
+    public List<Cidade> buscaListaById(int id){
+        
+        return dao.buscarListaByWhere(Cidade.class, "estado = "+id);
+        
+    }
 }

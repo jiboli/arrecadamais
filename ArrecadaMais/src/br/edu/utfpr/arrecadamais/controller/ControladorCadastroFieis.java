@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.edu.utfpr.arrecadamais.controller;
 
 import br.edu.utfpr.arrecadamais.model.bo.FieisBO;
 import br.edu.utfpr.arrecadamais.model.vo.Cidade;
 import br.edu.utfpr.arrecadamais.model.vo.Estado;
 import br.edu.utfpr.arrecadamais.model.vo.Fieis;
+<<<<<<< HEAD
 import br.edu.utfpr.arrecadamais.view.CadastroFieis;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,11 +17,15 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+=======
+
+>>>>>>> fa3b6d2e700dde077ffaa35535b81373964fa5de
 
 /**
  *
  * @author JoãoHenrique
  */
+<<<<<<< HEAD
 public class ControladorCadastroFieis implements ControleClasseCRUD<Fieis>{
     private CadastroFieis telaCadastro;
     private int retorno;
@@ -59,27 +63,21 @@ public class ControladorCadastroFieis implements ControleClasseCRUD<Fieis>{
     public Fieis inserir(Fieis objeto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+=======
+public class ControladorCadastroFieis implements ControleControler<Fieis>{
+>>>>>>> fa3b6d2e700dde077ffaa35535b81373964fa5de
 
     @Override
-    public Fieis excluir(Fieis objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Fieis carregaDadosObjeto() {
+        return new Fieis();
     }
 
     @Override
-    public Fieis alterar(Fieis objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void carregaDadosTela(Fieis objeto) {
 
-    @Override
-    public List<Fieis> buscarTotal() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Fieis buscarByID(int ID) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+<<<<<<< HEAD
     private void cancelar(){
         this.telaCadastro.dispose();
         
@@ -114,3 +112,6 @@ private Fieis carregaDadosObjeto(){
         Fieis fieis = new Fieis();
     }
 }
+=======
+}
+>>>>>>> fa3b6d2e700dde077ffaa35535b81373964fa5de

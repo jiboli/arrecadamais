@@ -23,7 +23,7 @@ public class Estado implements Serializable{
     
     @Column
     private String nome;
-
+    
     public Estado() {
     
     }
@@ -42,5 +42,12 @@ public class Estado implements Serializable{
 
     public void setId(int id) {
         this.id = id;
+    } 
+
+    @Override
+    public String toString() {
+       return this.getNome();
     }
+    
+    
 }
