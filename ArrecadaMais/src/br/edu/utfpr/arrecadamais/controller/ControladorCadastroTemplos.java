@@ -15,7 +15,7 @@ import br.edu.utfpr.arrecadamais.model.bo.TemploBO;
 import br.edu.utfpr.arrecadamais.model.vo.Cidade;
 import br.edu.utfpr.arrecadamais.model.vo.Estado;
 import br.edu.utfpr.arrecadamais.model.vo.Templo;
-import br.edu.utfpr.arrecadamais.view.CadastroTemplos;
+import br.edu.utfpr.arrecadamais.view.cadastros.CadastroTemplos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static java.lang.Integer.parseInt;

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package br.edu.utfpr.arrecadamais.view;
+package br.edu.utfpr.arrecadamais.view.cadastros;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -55,9 +55,7 @@ public class CadastroTemplos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Templo");
-        setMaximumSize(new java.awt.Dimension(500, 2147483647));
         setMinimumSize(new java.awt.Dimension(200, 300));
-        setPreferredSize(new java.awt.Dimension(471, 200));
         setResizable(false);
         setType(java.awt.Window.Type.POPUP);
 

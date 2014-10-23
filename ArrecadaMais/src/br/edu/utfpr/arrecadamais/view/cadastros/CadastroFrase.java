@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.utfpr.arrecadamais.view;
+package br.edu.utfpr.arrecadamais.view.cadastros;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -44,7 +44,6 @@ public class CadastroFrase extends javax.swing.JFrame {
         textAutor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(400, 300));
         setResizable(false);
 
         jPanel1.setLayout(new java.awt.BorderLayout());

@@ -11,7 +11,7 @@ import br.edu.utfpr.arrecadamais.model.bo.PastorBO;
 import br.edu.utfpr.arrecadamais.model.vo.Cidade;
 import br.edu.utfpr.arrecadamais.model.vo.Estado;
 import br.edu.utfpr.arrecadamais.model.vo.Pastor;
-import br.edu.utfpr.arrecadamais.view.CadastroPastores;
+import br.edu.utfpr.arrecadamais.view.cadastros.CadastroPastores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
@@ -108,7 +108,7 @@ public class ControladorCadastroPastores implements ControleControler<Pastor> {
         PastorBO bo = new PastorBO();
         
         //gera um objeto a partir da tela
-        pastor = carregaDadosObjeto();
+        carregaDadosObjeto();
 
         //insere o objeto no banco
         bo.inserir(pastor);
@@ -117,7 +117,7 @@ public class ControladorCadastroPastores implements ControleControler<Pastor> {
     @Override
     public Pastor carregaDadosObjeto() {
         //pega todos os inputs da tela e insere no objeto pastor
-        
+        pastor = new Pastor();
         pastor.setNome(this.telaPastor.getTextNome().getText());
         pastor.setSobrenome(this.telaPastor.getTextSobrenome().getText());
         pastor.setCpf(this.telaPastor.getTextCpf().getText());
@@ -146,6 +146,12 @@ public class ControladorCadastroPastores implements ControleControler<Pastor> {
         String datestring = dateFormat.format(objeto.getDataNascimento());
         this.telaPastor.getTextDataNascimento().setText(datestring);
         this.telaPastor.getComboCidade().getModel().setSelectedItem(objeto.getCidade());
+    }
+
+    void abrirPastor() {
+        //exibe a tela
+        this.telaPastor.setVisible(true);
+        this.telaPastor.toFront();
     }
 
 }

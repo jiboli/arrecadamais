@@ -9,6 +9,7 @@
       <property name="hibernate.use_sql_comments" value="false"/>
       <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/arrecada"/>
       <property name="javax.persistence.jdbc.password" value="postgres"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>

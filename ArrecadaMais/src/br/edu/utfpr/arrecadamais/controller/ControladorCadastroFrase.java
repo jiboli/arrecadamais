@@ -7,7 +7,7 @@ package br.edu.utfpr.arrecadamais.controller;
 
 import br.edu.utfpr.arrecadamais.model.bo.FraseBO;
 import br.edu.utfpr.arrecadamais.model.vo.Frase;
-import br.edu.utfpr.arrecadamais.view.CadastroFrase;
+import br.edu.utfpr.arrecadamais.view.cadastros.CadastroFrase;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package br.edu.utfpr.arrecadamais.view;
+package br.edu.utfpr.arrecadamais.view.cadastros;
 
 import java.awt.Frame;
 import javax.swing.JButton;
@@ -78,7 +78,6 @@ public class CadastroFieis extends javax.swing.JFrame {
         comboCidade = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(436, 500));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N

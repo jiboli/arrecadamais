@@ -12,7 +12,7 @@ import br.edu.utfpr.arrecadamais.model.vo.Cidade;
 import br.edu.utfpr.arrecadamais.model.vo.Estado;
 import br.edu.utfpr.arrecadamais.model.vo.Fieis;
 import br.edu.utfpr.arrecadamais.model.vo.Pastor;
-import br.edu.utfpr.arrecadamais.view.CadastroFieis;
+import br.edu.utfpr.arrecadamais.view.cadastros.CadastroFieis;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
@@ -94,8 +94,9 @@ public class ControladorCadastroFieis implements ControleControler<Fieis>{
         this.telaCadastro.getComboCidade().setModel(new DefaultComboBoxModel(cidades.toArray()));
 
         //exibe a tela
-        this.telaCadastro.setVisible(true);
-        this.telaCadastro.toFront();
+        //this.telaCadastro.setVisible(true);
+        //this.telaCadastro.toFront();
+        //Criado metodo proprio para tal
         //fim do construtor
     }
     
@@ -109,7 +110,7 @@ public class ControladorCadastroFieis implements ControleControler<Fieis>{
         FieisBO bo = new FieisBO();
         
         //gera um objeto a partir da tela
-        fiel = carregaDadosObjeto();
+        carregaDadosObjeto();
 
         //insere o objeto no banco
         bo.inserir(fiel);
@@ -138,7 +139,7 @@ public void carregaDadosTela(Fieis objeto){
     }
 public Fieis carregaDadosObjeto(){
         //pega todos os inputs da tela e insere no objeto fiel
-        
+        fiel = new Fieis();
         fiel.setNome(this.telaCadastro.getTextNome().getText());
         fiel.setSobrenome(this.telaCadastro.getTextSobrenome().getText());
         fiel.setCpf(this.telaCadastro.getTextCpf().getText());
@@ -161,6 +162,11 @@ public Fieis carregaDadosObjeto(){
         
 
         return fiel;
+    }
+
+    public void abrirFiel() {
+        this.telaCadastro.setVisible(true);
+        this.telaCadastro.toFront();
     }
 
 

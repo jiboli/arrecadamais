@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package br.edu.utfpr.arrecadamais.view;
+package br.edu.utfpr.arrecadamais.view.cadastros;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
