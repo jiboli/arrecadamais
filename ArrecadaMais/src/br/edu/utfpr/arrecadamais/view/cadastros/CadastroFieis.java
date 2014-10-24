@@ -81,7 +81,9 @@ public class CadastroFieis extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setText("Cadastrar Fiel");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/ViewFiel.png"))); // NOI18N
+        jLabel1.setText("Cadastrar");
         jPanel4.add(jLabel1);
 
         getContentPane().add(jPanel4, java.awt.BorderLayout.NORTH);

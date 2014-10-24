@@ -70,7 +70,8 @@ public class CadastroTemplos extends javax.swing.JFrame {
         getContentPane().add(jPanel1, java.awt.BorderLayout.SOUTH);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setText("Cadastrar Templo");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/ViewTemplos.png"))); // NOI18N
+        jLabel1.setText("Cadastrar");
         jPanel4.add(jLabel1);
 
         getContentPane().add(jPanel4, java.awt.BorderLayout.NORTH);

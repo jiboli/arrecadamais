@@ -49,7 +49,8 @@ public class CadastroFrase extends javax.swing.JFrame {
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setText("Cadastrar Frase");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/ViewFrase.png"))); // NOI18N
+        jLabel1.setText("Cadastrar");
         jPanel4.add(jLabel1);
 
         jPanel1.add(jPanel4, java.awt.BorderLayout.NORTH);
