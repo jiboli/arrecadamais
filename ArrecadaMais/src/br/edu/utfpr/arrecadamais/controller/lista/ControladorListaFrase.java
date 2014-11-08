@@ -27,6 +27,7 @@ public class ControladorListaFrase {
         telaFrase.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         fraseBO = new FraseBO();
+        
         model = new DefaultTableModel();
         model.addColumn("Id");
         model.addColumn("Autor");
@@ -107,14 +108,14 @@ public class ControladorListaFrase {
             Frase frase = listaTotal.get(i);
 
             Vector row = new Vector();
-            row.add(frase.getId()+"");
+            row.add(frase.getId());
             row.add(frase.getAutor());
 
             model.addRow(row);
         }
 
         telaFrase.getTbTabela().setModel(model);
-//        model.fireTableDataChanged();
+        model.fireTableDataChanged();
 
     }
 
