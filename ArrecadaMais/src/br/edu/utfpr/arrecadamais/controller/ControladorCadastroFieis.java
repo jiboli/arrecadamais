@@ -5,6 +5,7 @@
  */
 package br.edu.utfpr.arrecadamais.controller;
 
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFieis;
 import br.edu.utfpr.arrecadamais.model.bo.CidadeBO;
 import br.edu.utfpr.arrecadamais.model.bo.EstadoBO;
 import br.edu.utfpr.arrecadamais.model.bo.FieisBO;
@@ -29,8 +30,8 @@ import javax.swing.JOptionPane;
  *
  * @author JoãoHenrique
  */
+public class ControladorCadastroFieis implements ControleControler<Fieis> {
 
-public class ControladorCadastroFieis implements ControleControler<Fieis>{
     private CadastroFieis telaCadastro;
     private Fieis fiel;
     private List<Estado> estados;
@@ -40,44 +41,47 @@ public class ControladorCadastroFieis implements ControleControler<Fieis>{
     private FieisBO fieisBo;
 
     public ControladorCadastroFieis(Fieis fiel) {
+        //tela cadastro fieles
+        this.telaCadastro = new CadastroFieis();
+        this.telaCadastro.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.fiel = fiel;
         fieisBo = new FieisBO();
         EstadoBO estadoBo = new EstadoBO();
         cidadeBo = new CidadeBO();
         cidades = cidadeBo.buscaListaById(1);
         estados = estadoBo.buscarTotal();//busca todos os estados
-        
+
         //verifica se o fiel foi passado como parametro
         //para quando for editar um fiel passar ele para essa tela
         // e apartir dela alteramos
         if (fiel == null) {
             //cria um novo fiel, pq eh de add um
-            fiel = new Fieis(); 
+            fiel = new Fieis();
+            abrirFiel();
         } else {
+            abrirFiel();
             //caso fiel venha como parametro insere na tela os dados
             carregaDadosTela(fiel);
         }
-        
-        //tela cadastro fieles
-        this.telaCadastro = new CadastroFieis();
-        this.telaCadastro.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
+
         //evento botao cancelar
         this.telaCadastro.getBtnCancelar().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cancelar();//fecha a tela
+                abrirTelaGrid();
+
             }
         });
-        
+
         //evento salvar fiel
         this.telaCadastro.getBtnCadastrar().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 salvar(); // salva um fiel
+               abrirTelaGrid();
             }
         });
-        
+
         //evento que buscas cidades de acordo com o estado selecionado
         this.telaCadastro.getComboEstado().addActionListener(new ActionListener() {
             @Override
@@ -85,8 +89,8 @@ public class ControladorCadastroFieis implements ControleControler<Fieis>{
                 //e.getSource eh o comobobox
                 //selectedItem eh o intem selecionado
                 //getId - pega o id do estado
-               cidades = cidadeBo.buscaListaById(((Estado)((JComboBox) e.getSource()).getSelectedItem()).getId()); 
-               telaCadastro.getComboCidade().setModel(new DefaultComboBoxModel(cidades.toArray()));// insere as cidade no combobox
+                cidades = cidadeBo.buscaListaById(((Estado) ((JComboBox) e.getSource()).getSelectedItem()).getId());
+                telaCadastro.getComboCidade().setModel(new DefaultComboBoxModel(cidades.toArray()));// insere as cidade no combobox
             }
         });
         // inseri na tela padrao as cidades e estados
@@ -99,29 +103,32 @@ public class ControladorCadastroFieis implements ControleControler<Fieis>{
         //Criado metodo proprio para tal
         //fim do construtor
     }
-    
-    
-    public void cancelar() {
-        this.telaCadastro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.telaCadastro.dispose(); // fecha a janela
+
+    private void abrirTelaGrid() {
+        telaCadastro.setVisible(false);
+        telaCadastro.dispose();
+        ControladorListaFieis lista = new ControladorListaFieis();
+        lista.abrirListaFiel();
     }
+
     public void salvar() {
         //instancia um BO
         FieisBO bo = new FieisBO();
-        
+
         //gera um objeto a partir da tela
         carregaDadosObjeto();
 
         //insere o objeto no banco
         bo.inserir(fiel);
+        
     }
-    
-public void carregaDadosTela(Fieis objeto){
-       /* this.telaCadastro.getCmbEstado().setModel(new DefaultComboBoxModel(itemsEstado));
-        this.telaCadastro.getCmbEstado().getModel().setSelectedItem(this);
-        this.telaCadastro.getCmbEscolaridade().setModel(new DefaultComboBoxModel(itemsEscolaridade));
-        this.telaCadastro.getCmbEscolaridade().getModel().setSelectedItem(this);*/
-    //pega todos os valores do fiel e insere na tela
+
+    public void carregaDadosTela(Fieis objeto) {
+        /* this.telaCadastro.getCmbEstado().setModel(new DefaultComboBoxModel(itemsEstado));
+         this.telaCadastro.getCmbEstado().getModel().setSelectedItem(this);
+         this.telaCadastro.getCmbEscolaridade().setModel(new DefaultComboBoxModel(itemsEscolaridade));
+         this.telaCadastro.getCmbEscolaridade().getModel().setSelectedItem(this);*/
+        //pega todos os valores do fiel e insere na tela
         this.telaCadastro.getTextNome().setText(objeto.getNome());
         this.telaCadastro.getTextSobrenome().setText(objeto.getSobrenome());
         this.telaCadastro.getTextCpf().setText(objeto.getCpf());
@@ -136,10 +143,14 @@ public void carregaDadosTela(Fieis objeto){
         this.telaCadastro.getTextCargo().setText(objeto.getCargo());
         this.telaCadastro.getTextEscolaridade().setText(objeto.getEscolaridade());
         this.telaCadastro.getTextEdereco().setText(objeto.getEndereco());
+
     }
-public Fieis carregaDadosObjeto(){
+
+    public Fieis carregaDadosObjeto() {
         //pega todos os inputs da tela e insere no objeto fiel
-        fiel = new Fieis();
+        if (fiel == null) {
+            fiel = new Fieis();
+        }
         fiel.setNome(this.telaCadastro.getTextNome().getText());
         fiel.setSobrenome(this.telaCadastro.getTextSobrenome().getText());
         fiel.setCpf(this.telaCadastro.getTextCpf().getText());
@@ -159,7 +170,6 @@ public Fieis carregaDadosObjeto(){
         fiel.setCargo(this.telaCadastro.getTextCargo().getText());
         fiel.setEscolaridade(this.telaCadastro.getTextEscolaridade().getText());
         fiel.setEndereco(this.telaCadastro.getTextEdereco().getText());
-        
 
         return fiel;
     }
@@ -169,6 +179,4 @@ public Fieis carregaDadosObjeto(){
         this.telaCadastro.toFront();
     }
 
-
 }
-

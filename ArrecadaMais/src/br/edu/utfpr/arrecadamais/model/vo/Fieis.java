@@ -23,7 +23,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "fieis")
-public class Fieis implements Serializable{
+public class Fieis implements Serializable, VoConstante{
     
     @Id
     @GeneratedValue
@@ -60,7 +60,7 @@ public class Fieis implements Serializable{
     private String escolaridade;
     
     @ManyToOne
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "cidade_id", insertable = true, updatable = false)
     private Cidade cidade;
     
     @Column
@@ -171,6 +171,11 @@ public class Fieis implements Serializable{
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public int getIdConstante() {
+        return this.id;
     }
    
 }

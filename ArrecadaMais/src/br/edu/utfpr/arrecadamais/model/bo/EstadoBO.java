@@ -36,12 +36,16 @@ public class EstadoBO  implements ControleClasseCRUD<Estado>{
     }
 
     @Override
-    public void excluir(Estado objeto) {
+    public boolean excluir(Estado objeto) {
+        boolean retorno = false;
+        
         try {
-            dao.excluir(objeto);
+            retorno = dao.excluir(objeto);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        
+        return retorno;
     }
 
     @Override

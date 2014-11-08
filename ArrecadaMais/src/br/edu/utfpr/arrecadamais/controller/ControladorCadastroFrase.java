@@ -5,6 +5,7 @@
  */
 package br.edu.utfpr.arrecadamais.controller;
 
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFrase;
 import br.edu.utfpr.arrecadamais.model.bo.FraseBO;
 import br.edu.utfpr.arrecadamais.model.vo.Frase;
 import br.edu.utfpr.arrecadamais.view.cadastros.CadastroFrase;
@@ -24,20 +25,21 @@ public class ControladorCadastroFrase implements ControleControler<Frase> {
 
     public ControladorCadastroFrase(Frase frase) {
         this.frase = frase;
-        
-        if(frase == null){
-            frase = new Frase();
-        } else {
-            carregaDadosTela(frase);;
-        }
-        
         this.telaFrase = new CadastroFrase();
         this.telaFrase.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        if (frase == null) {
+            frase = new Frase();
+        } else {
+            abrirFrase();
+            carregaDadosTela(frase);
+        }
 
         this.telaFrase.getBtnCancelar().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cancelar();
+                abrirTelaGrid();
             }
         });
 
@@ -45,12 +47,28 @@ public class ControladorCadastroFrase implements ControleControler<Frase> {
             @Override
             public void actionPerformed(ActionEvent e) {
                 salvar();
+                abrirTelaGrid();
             }
         });
+
+        abrirFrase();
+    }
+
+    public void abrirTelaGrid() {
+        telaFrase.setVisible(false);
+        telaFrase.dispose();
+        ControladorListaFrase lista = new ControladorListaFrase();
+        lista.abrirListaFiel();
+    }
+
+    void abrirFrase() {
+        //exibe a tela
+        this.telaFrase.setVisible(true);
+        this.telaFrase.toFront();
     }
 
     public void cancelar() {
-       this.telaFrase.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.telaFrase.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.telaFrase.dispose(); // fecha a janela
     }
 
@@ -64,6 +82,9 @@ public class ControladorCadastroFrase implements ControleControler<Frase> {
 
     @Override
     public Frase carregaDadosObjeto() {
+        if(frase == null){
+            frase = new Frase();
+        }
         frase.setAutor(this.telaFrase.getTextAutor().getText());
         frase.setFrase(this.telaFrase.getTextFrase().getText());
         return frase;

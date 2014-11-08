@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.edu.utfpr.arrecadamais.model.bo;
 
 import br.edu.utfpr.arrecadamais.controller.ControleClasseCRUD;
@@ -16,7 +15,7 @@ import java.util.List;
  *
  * @author JoãoHenrique
  */
-public class FieisBO implements ControleClasseCRUD<Fieis>{
+public class FieisBO implements ControleClasseCRUD<Fieis> {
 
     private DAODinamico<Fieis> dao = new DAODinamico<Fieis>();
 
@@ -35,12 +34,16 @@ public class FieisBO implements ControleClasseCRUD<Fieis>{
     }
 
     @Override
-    public void excluir(Fieis objeto) {
+    public boolean excluir(Fieis objeto) {
+       boolean retorno = false;
+        
         try {
-            dao.excluir(objeto);
+             retorno = dao.excluir(objeto);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        
+        return retorno;
     }
 
     @Override
@@ -75,5 +78,37 @@ public class FieisBO implements ControleClasseCRUD<Fieis>{
         }
         return retorno;
     }
-    
+
+    public List<Fieis> buscarComFiltroGeral(String filtro) {
+        List<Fieis> retorno = null;
+        StringBuilder where = new StringBuilder();
+
+        where.append("nome like '%");
+        where.append(filtro);
+        where.append("%' OR sobrenome like '%");
+        where.append(filtro);
+        where.append("%' OR telefone like '%");
+        where.append(filtro);
+        where.append("%'");
+
+        try {
+            where.append(" OR id = ");
+            where.append(filtro);
+        } catch (Exception e) {
+
+        }
+
+        try {
+            if (filtro.isEmpty()) {
+                retorno = (List<Fieis>) dao.buscarListaByWhere(Fieis.class, "");
+            } else {
+                retorno = (List<Fieis>) dao.buscarListaByWhere(Fieis.class, where.toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return retorno;
+    }
+
 }

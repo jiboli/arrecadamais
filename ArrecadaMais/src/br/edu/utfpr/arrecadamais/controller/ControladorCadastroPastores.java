@@ -5,6 +5,7 @@
  */
 package br.edu.utfpr.arrecadamais.controller;
 
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaPastor;
 import br.edu.utfpr.arrecadamais.model.bo.CidadeBO;
 import br.edu.utfpr.arrecadamais.model.bo.EstadoBO;
 import br.edu.utfpr.arrecadamais.model.bo.PastorBO;
@@ -36,6 +37,9 @@ public class ControladorCadastroPastores implements ControleControler<Pastor> {
 
     public ControladorCadastroPastores(Pastor pastor) {
         this.pastor = pastor;
+        //tela cadastro pastores
+        this.telaPastor = new CadastroPastores();
+        this.telaPastor.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         cidadeBo = new CidadeBO();//dentro do actionliestener só funciona se tiver private la em cima
         EstadoBO estadoBo = new EstadoBO();
@@ -45,27 +49,28 @@ public class ControladorCadastroPastores implements ControleControler<Pastor> {
         //faco uma busca por cidades com estado_id = 1
         cidades = cidadeBo.buscaListaById(1);
         estados = estadoBo.buscarTotal();//busca todos os estados
-        
+
+        // inseri na tela padrao as cidades e estados
+        this.telaPastor.getComboEstado().setModel(new DefaultComboBoxModel(estados.toArray()));
+        this.telaPastor.getComboCidade().setModel(new DefaultComboBoxModel(cidades.toArray()));
+
         //verifica se o pastor foi passado como parametro
         //para quando for editar um pastor passar ele para essa tela
         // e apartir dela alteramos
         if (pastor == null) {
             //cria um novo pastor, pq eh de add um
-            pastor = new Pastor(); 
+            pastor = new Pastor();
         } else {
+            abrirPastor();
             //caso pastor venha como parametro insere na tela os dados
             carregaDadosTela(pastor);;
         }
-        
-        //tela cadastro pastores
-        this.telaPastor = new CadastroPastores();
-        this.telaPastor.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         //evento botao cancelar
         this.telaPastor.getBtnCancelar().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cancelar();//fecha a tela
+                abrirTelaGrid();
             }
         });
 
@@ -74,9 +79,10 @@ public class ControladorCadastroPastores implements ControleControler<Pastor> {
             @Override
             public void actionPerformed(ActionEvent e) {
                 salvar(); // salva um pastor
+                abrirTelaGrid();
             }
         });
-        
+
         //evento que buscas cidades de acordo com o estado selecionado
         this.telaPastor.getComboEstado().addActionListener(new ActionListener() {
             @Override
@@ -84,29 +90,26 @@ public class ControladorCadastroPastores implements ControleControler<Pastor> {
                 //e.getSource eh o comobobox
                 //selectedItem eh o intem selecionado
                 //getId - pega o id do estado
-               cidades = cidadeBo.buscaListaById(((Estado)((JComboBox) e.getSource()).getSelectedItem()).getId()); 
-               telaPastor.getComboCidade().setModel(new DefaultComboBoxModel(cidades.toArray()));// insere as cidade no combobox
+                cidades = cidadeBo.buscaListaById(((Estado) ((JComboBox) e.getSource()).getSelectedItem()).getId());
+                telaPastor.getComboCidade().setModel(new DefaultComboBoxModel(cidades.toArray()));// insere as cidade no combobox
             }
         });
-
-        // inseri na tela padrao as cidades e estados
-        this.telaPastor.getComboEstado().setModel(new DefaultComboBoxModel(estados.toArray()));
-        this.telaPastor.getComboCidade().setModel(new DefaultComboBoxModel(cidades.toArray()));
 
         //exibe a tela
         this.telaPastor.setVisible(true);
         this.telaPastor.toFront();
     }
 
-    public void cancelar() {
-        this.telaPastor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.telaPastor.dispose(); // fecha a janela
+    public void abrirTelaGrid() {
+        telaPastor.setVisible(false);
+        telaPastor.dispose();
+        ControladorListaPastor lista = new ControladorListaPastor();
+        lista.abrirListaFiel();
     }
 
     public void salvar() {
         //instancia um BO
         PastorBO bo = new PastorBO();
-        
         //gera um objeto a partir da tela
         carregaDadosObjeto();
 
@@ -117,12 +120,14 @@ public class ControladorCadastroPastores implements ControleControler<Pastor> {
     @Override
     public Pastor carregaDadosObjeto() {
         //pega todos os inputs da tela e insere no objeto pastor
-        pastor = new Pastor();
+        if (pastor == null) {
+            pastor = new Pastor();
+        }
         pastor.setNome(this.telaPastor.getTextNome().getText());
         pastor.setSobrenome(this.telaPastor.getTextSobrenome().getText());
         pastor.setCpf(this.telaPastor.getTextCpf().getText());
         pastor.setSalario(Double.parseDouble(this.telaPastor.getTextSalario().getText()));
-        DateFormat formatter = new SimpleDateFormat("MM/dd/yy");
+        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date date = null;
         try {
             date = (Date) formatter.parse(this.telaPastor.getTextDataNascimento().getText());

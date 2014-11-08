@@ -6,6 +6,14 @@
 
 package br.edu.utfpr.arrecadamais.view.views;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author JoãoHenrique
@@ -47,7 +55,7 @@ public class ViewFrase extends javax.swing.JFrame {
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
 
         jPanel6.setPreferredSize(new java.awt.Dimension(676, 50));
-        jPanel6.setLayout(new java.awt.GridLayout());
+        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/ViewFrase.png"))); // NOI18N
@@ -92,8 +100,11 @@ public class ViewFrase extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tbTabela.setColumnSelectionAllowed(true);
         tbTabela.setPreferredSize(new java.awt.Dimension(100, 0));
+        tbTabela.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbTabela);
+        tbTabela.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         jPanel2.add(jScrollPane1);
 
@@ -182,4 +193,118 @@ public class ViewFrase extends javax.swing.JFrame {
     private javax.swing.JTextArea taFrase;
     private javax.swing.JTable tbTabela;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtBuscar() {
+        return btBuscar;
+    }
+
+    public void setBtBuscar(JButton btBuscar) {
+        this.btBuscar = btBuscar;
+    }
+
+    public JButton getBtExcluir() {
+        return btExcluir;
+    }
+
+    public void setBtExcluir(JButton btExcluir) {
+        this.btExcluir = btExcluir;
+    }
+
+    public JButton getBtFechar() {
+        return btFechar;
+    }
+
+    public void setBtFechar(JButton btFechar) {
+        this.btFechar = btFechar;
+    }
+
+    public JButton getBtInserir() {
+        return btInserir;
+    }
+
+    public void setBtInserir(JButton btInserir) {
+        this.btInserir = btInserir;
+    }
+
+    public JTextField getEdtBuscar() {
+        return edtBuscar;
+    }
+
+    public void setEdtBuscar(JTextField edtBuscar) {
+        this.edtBuscar = edtBuscar;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPanel4() {
+        return jPanel4;
+    }
+
+    public void setjPanel4(JPanel jPanel4) {
+        this.jPanel4 = jPanel4;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public void setjPanel5(JPanel jPanel5) {
+        this.jPanel5 = jPanel5;
+    }
+
+    public JPanel getjPanel6() {
+        return jPanel6;
+    }
+
+    public void setjPanel6(JPanel jPanel6) {
+        this.jPanel6 = jPanel6;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public JTextArea getTaFrase() {
+        return taFrase;
+    }
+
+    public void setTaFrase(JTextArea taFrase) {
+        this.taFrase = taFrase;
+    }
+
+    public JTable getTbTabela() {
+        return tbTabela;
+    }
+
+    public void setTbTabela(JTable tbTabela) {
+        this.tbTabela = tbTabela;
+    }
+        
+        
 }

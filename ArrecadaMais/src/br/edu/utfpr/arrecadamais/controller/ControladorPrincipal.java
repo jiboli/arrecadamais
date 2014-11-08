@@ -6,6 +6,10 @@
 
 package br.edu.utfpr.arrecadamais.controller;
 
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFieis;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFrase;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaPastor;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaTemplo;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -20,15 +24,20 @@ public class ControladorPrincipal {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ex) {
-            Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         
-        ControladorCadastroFieis fiel = new ControladorCadastroFieis(null);
-        fiel.abrirFiel();
-        ControladorCadastroPastores pastor = new ControladorCadastroPastores(null);
-        pastor.abrirPastor();
+//        ControladorListaFieis lista = new ControladorListaFieis();
+//        lista.abrirListaFiel();
         
+//        ControladorListaPastor lista = new ControladorListaPastor();
+//        lista.abrirListaFiel();
         
+//        ControladorListaTemplo lista = new ControladorListaTemplo();
+//        lista.abrirListaFiel();
+        
+        ControladorListaFrase lista = new ControladorListaFrase();
+        lista.abrirListaFiel();
         
     }
     

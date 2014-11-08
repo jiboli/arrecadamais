@@ -37,12 +37,14 @@ public class CidadeBO  implements ControleClasseCRUD<Cidade>{
     }
 
     @Override
-    public void excluir(Cidade objeto) {
+    public boolean excluir(Cidade objeto) {
+        boolean retorno = false;
         try {
-            dao.excluir(objeto);
+            retorno = dao.excluir(objeto);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        return retorno;
     }
 
     @Override

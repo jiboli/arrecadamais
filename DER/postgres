@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS arrecada.fieis (
   cidade_id INT NOT NULL,
   nome VARCHAR(90) NULL,
   sobrenome VARCHAR(90) NULL,
-  data_nimento DATE NULL,
+  data_nascimento DATE NULL,
   telefone VARCHAR(45) NULL,
   celular VARCHAR(45) NULL,
   cpf VARCHAR(45) NULL,

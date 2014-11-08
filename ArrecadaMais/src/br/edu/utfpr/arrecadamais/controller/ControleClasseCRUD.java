@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface ControleClasseCRUD<T> {
     public T inserir(T objeto);
-    public void excluir(T objeto);
+    public boolean excluir(T objeto);
     public T alterar(T objeto);
     public List<T> buscarTotal();
     public T buscarByID(int ID);
