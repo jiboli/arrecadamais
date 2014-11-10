@@ -63,6 +63,7 @@ public class CadastroPastores extends javax.swing.JFrame {
         jLabel9.setText("Cidade");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(446, 400));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(446, 180));
         jPanel1.setLayout(new java.awt.BorderLayout());

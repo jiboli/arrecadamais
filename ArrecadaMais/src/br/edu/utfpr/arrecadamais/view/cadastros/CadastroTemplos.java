@@ -57,7 +57,6 @@ public class CadastroTemplos extends javax.swing.JFrame {
         setTitle("Cadastrar Templo");
         setMinimumSize(new java.awt.Dimension(200, 300));
         setResizable(false);
-        setType(java.awt.Window.Type.POPUP);
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 

@@ -7,7 +7,7 @@
 package br.edu.utfpr.arrecadamais.controller;
 
 import br.edu.utfpr.arrecadamais.view.TelaPrincipal;
-
+ 
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFieis;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFrase;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaPastor;
