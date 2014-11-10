@@ -119,7 +119,7 @@ public class ControladorListaFrase {
 
     }
 
-    public void abrirListaFiel() {
+    public void abrirTela() {
         this.telaFrase.setVisible(true);
         this.telaFrase.toFront();
     }

@@ -104,7 +104,7 @@ public class ControladorCadastroPastores implements ControleControler<Pastor> {
         telaPastor.setVisible(false);
         telaPastor.dispose();
         ControladorListaPastor lista = new ControladorListaPastor();
-        lista.abrirListaFiel();
+        lista.abrirTela();
     }
 
     public void salvar() {

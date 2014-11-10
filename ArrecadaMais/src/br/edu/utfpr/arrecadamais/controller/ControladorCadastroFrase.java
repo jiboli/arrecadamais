@@ -58,7 +58,7 @@ public class ControladorCadastroFrase implements ControleControler<Frase> {
         telaFrase.setVisible(false);
         telaFrase.dispose();
         ControladorListaFrase lista = new ControladorListaFrase();
-        lista.abrirListaFiel();
+        lista.abrirTela();
     }
 
     void abrirFrase() {

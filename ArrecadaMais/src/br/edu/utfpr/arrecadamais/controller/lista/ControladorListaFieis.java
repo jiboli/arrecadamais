@@ -122,7 +122,7 @@ public class ControladorListaFieis {
 
     }
 
-    public void abrirListaFiel() {
+    public void abrirTela() {
         this.telaFiel.setVisible(true);
         this.telaFiel.toFront();
     }

@@ -108,7 +108,7 @@ public class ControladorCadastroFieis implements ControleControler<Fieis> {
         telaCadastro.setVisible(false);
         telaCadastro.dispose();
         ControladorListaFieis lista = new ControladorListaFieis();
-        lista.abrirListaFiel();
+        lista.abrirTela();
     }
 
     public void salvar() {

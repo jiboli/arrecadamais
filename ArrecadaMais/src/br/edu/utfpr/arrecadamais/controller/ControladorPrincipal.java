@@ -10,6 +10,7 @@ import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFieis;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFrase;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaPastor;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaTemplo;
+import br.edu.utfpr.arrecadamais.controller.transacoes.ControladorCompraTerreno;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -28,17 +29,20 @@ public class ControladorPrincipal {
         }
         
 //        ControladorListaFieis lista = new ControladorListaFieis();
-//        lista.abrirListaFiel();
+//        lista.abrirTela();
         
 //        ControladorListaPastor lista = new ControladorListaPastor();
-//        lista.abrirListaFiel();
+//        lista.abrirTela();
         
-//        ControladorListaTemplo lista = new ControladorListaTemplo();
-//        lista.abrirListaFiel();
+        ControladorListaTemplo lista = new ControladorListaTemplo();
+        lista.abrirTela();
         
-        ControladorListaFrase lista = new ControladorListaFrase();
-        lista.abrirListaFiel();
+//        ControladorListaFrase lista = new ControladorListaFrase();
+//        lista.abrirTela();
         
+//        ControladorCompraTerreno cadastro = new ControladorCompraTerreno(null);
+//        cadastro.abrirTela();
+//        
     }
     
 }

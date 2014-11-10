@@ -102,7 +102,7 @@ public class ControladorCadastroTemplos implements ControleControler<Templo>{
         telaTemplo.setVisible(false);
         telaTemplo.dispose();
          ControladorListaTemplo lista = new ControladorListaTemplo();
-        lista.abrirListaFiel();
+        lista.abrirTela();
     }
      
       void abrirTemplo() {

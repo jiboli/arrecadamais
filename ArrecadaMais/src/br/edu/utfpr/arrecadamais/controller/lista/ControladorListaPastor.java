@@ -121,7 +121,7 @@ public class ControladorListaPastor {
 
     }
 
-    public void abrirListaFiel() {
+    public void abrirTela() {
         this.telaPastor.setVisible(true);
         this.telaPastor.toFront();
     }

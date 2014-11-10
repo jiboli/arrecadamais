@@ -6,6 +6,15 @@
 
 package br.edu.utfpr.arrecadamais.view.transacoes;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.JSlider;
+import javax.swing.JTextField;
+
 /**
  *
  * @author JoãoHenrique
@@ -32,13 +41,13 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        etNumeroCartao = new javax.swing.JFormattedTextField();
+        etNomeCartao = new javax.swing.JTextField();
+        edCodigoSeguraca = new javax.swing.JFormattedTextField();
         jLabel17 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        edDataValidade = new javax.swing.JFormattedTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -49,13 +58,13 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        cbTipoTerreno = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
+        cbTipoDecoracao = new javax.swing.JComboBox();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox();
+        cbNumeroParcela = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -63,13 +72,13 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        edLargura = new javax.swing.JTextField();
+        edComprimento = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jSlider1 = new javax.swing.JSlider();
+        slComprimento = new javax.swing.JSlider();
         jLabel7 = new javax.swing.JLabel();
-        jSlider2 = new javax.swing.JSlider();
+        slLargura = new javax.swing.JSlider();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,21 +93,21 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jLabel16.setText("Código de Segurança:");
         jPanel12.add(jLabel16);
 
-        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####-####-####-####"))));
-        jPanel12.add(jFormattedTextField1);
-        jPanel12.add(jTextField3);
+        etNumeroCartao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####-####-####-####"))));
+        jPanel12.add(etNumeroCartao);
+        jPanel12.add(etNomeCartao);
 
-        jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
-        jFormattedTextField2.setMaximumSize(new java.awt.Dimension(20, 2147483647));
-        jPanel12.add(jFormattedTextField2);
+        edCodigoSeguraca.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###"))));
+        edCodigoSeguraca.setMaximumSize(new java.awt.Dimension(20, 2147483647));
+        jPanel12.add(edCodigoSeguraca);
 
         jLabel17.setText("Data de Validade (MM, AA):");
         jPanel12.add(jLabel17);
         jPanel12.add(jSeparator1);
         jPanel12.add(jSeparator2);
 
-        jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("MM/YY"))));
-        jPanel12.add(jFormattedTextField3);
+        edDataValidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("MM/YY"))));
+        jPanel12.add(edDataValidade);
 
         jButton1.setText("Comprar para mim");
         jPanel12.add(jButton1);
@@ -132,14 +141,14 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jLabel8.setText("Escolha o tipo de Terreno:");
         jPanel4.add(jLabel8);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel4.add(jComboBox1);
+        cbTipoTerreno.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel4.add(cbTipoTerreno);
 
         jLabel9.setText("Escolha o Tipo de Decoração:");
         jPanel4.add(jLabel9);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel4.add(jComboBox2);
+        cbTipoDecoracao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel4.add(cbTipoDecoracao);
 
         jLabel10.setText("Valor total:");
         jPanel4.add(jLabel10);
@@ -151,8 +160,8 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jLabel12.setText("Número de Parcelas:");
         jPanel4.add(jLabel12);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel4.add(jComboBox3);
+        cbNumeroParcela.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel4.add(cbNumeroParcela);
 
         jLabel13.setText("Com % de Juros Insignificantes.");
         jPanel4.add(jLabel13);
@@ -166,33 +175,40 @@ public class CompraTerrenos extends javax.swing.JFrame {
 
         jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 102), 5));
         jPanel9.setForeground(new java.awt.Color(102, 255, 102));
+        jPanel9.setMinimumSize(new java.awt.Dimension(10, 10));
+        jPanel9.setPreferredSize(new java.awt.Dimension(10, 10));
+        jPanel9.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 63, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jLabel4.setText("Comprimento:");
 
         jLabel5.setText("Largura:");
 
-        jTextField1.setEnabled(false);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        edLargura.setEditable(false);
+        edLargura.setText("46");
+        edLargura.setEnabled(false);
+        edLargura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                edLarguraActionPerformed(evt);
             }
         });
 
-        jTextField2.setEnabled(false);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        edComprimento.setEditable(false);
+        edComprimento.setText("58");
+        edComprimento.setEnabled(false);
+        edComprimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                edComprimentoActionPerformed(evt);
             }
         });
 
@@ -201,37 +217,34 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(118, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel5)
+                        .addComponent(edLargura, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                        .addComponent(edComprimento, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edLargura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edComprimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -242,16 +255,16 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jLabel6.setText("Comprimento:");
         jPanel8.add(jLabel6);
 
-        jSlider1.setMaximum(1000);
-        jSlider1.setMinimum(10);
-        jPanel8.add(jSlider1);
+        slComprimento.setMaximum(1000);
+        slComprimento.setMinimum(10);
+        jPanel8.add(slComprimento);
 
         jLabel7.setText("Largura:");
         jPanel8.add(jLabel7);
 
-        jSlider2.setMaximum(1000);
-        jSlider2.setMinimum(10);
-        jPanel8.add(jSlider2);
+        slLargura.setMaximum(1000);
+        slLargura.setMinimum(10);
+        jPanel8.add(slLargura);
 
         jPanel6.add(jPanel8, java.awt.BorderLayout.PAGE_END);
 
@@ -266,13 +279,13 @@ public class CompraTerrenos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void edLarguraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edLarguraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_edLarguraActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void edComprimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edComprimentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_edComprimentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -310,14 +323,17 @@ public class CompraTerrenos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox cbNumeroParcela;
+    private javax.swing.JComboBox cbTipoDecoracao;
+    private javax.swing.JComboBox cbTipoTerreno;
+    private javax.swing.JFormattedTextField edCodigoSeguraca;
+    private javax.swing.JTextField edComprimento;
+    private javax.swing.JFormattedTextField edDataValidade;
+    private javax.swing.JTextField edLargura;
+    private javax.swing.JTextField etNomeCartao;
+    private javax.swing.JFormattedTextField etNumeroCartao;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
-    private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -347,10 +363,347 @@ public class CompraTerrenos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSlider jSlider1;
-    private javax.swing.JSlider jSlider2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JSlider slComprimento;
+    private javax.swing.JSlider slLargura;
     // End of variables declaration//GEN-END:variables
+
+    public JComboBox getCbNumeroParcela() {
+        return cbNumeroParcela;
+    }
+
+    public void setCbNumeroParcela(JComboBox cbNumeroParcela) {
+        this.cbNumeroParcela = cbNumeroParcela;
+    }
+
+    public JComboBox getCbTipoDecoracao() {
+        return cbTipoDecoracao;
+    }
+
+    public void setCbTipoDecoracao(JComboBox cbTipoDecoracao) {
+        this.cbTipoDecoracao = cbTipoDecoracao;
+    }
+
+    public JComboBox getCbTipoTerreno() {
+        return cbTipoTerreno;
+    }
+
+    public void setCbTipoTerreno(JComboBox cbTipoTerreno) {
+        this.cbTipoTerreno = cbTipoTerreno;
+    }
+
+    public JFormattedTextField getEdCodigoSeguraca() {
+        return edCodigoSeguraca;
+    }
+
+    public void setEdCodigoSeguraca(JFormattedTextField edCodigoSeguraca) {
+        this.edCodigoSeguraca = edCodigoSeguraca;
+    }
+
+    public JTextField getEdComprimento() {
+        return edComprimento;
+    }
+
+    public void setEdComprimento(JTextField edComprimento) {
+        this.edComprimento = edComprimento;
+    }
+
+    public JFormattedTextField getEdDataValidade() {
+        return edDataValidade;
+    }
+
+    public void setEdDataValidade(JFormattedTextField edDataValidade) {
+        this.edDataValidade = edDataValidade;
+    }
+
+    public JTextField getEdLargura() {
+        return edLargura;
+    }
+
+    public void setEdLargura(JTextField edLargura) {
+        this.edLargura = edLargura;
+    }
+
+    public JTextField getEtNomeCartao() {
+        return etNomeCartao;
+    }
+
+    public void setEtNomeCartao(JTextField etNomeCartao) {
+        this.etNomeCartao = etNomeCartao;
+    }
+
+    public JFormattedTextField getEtNumeroCartao() {
+        return etNumeroCartao;
+    }
+
+    public void setEtNumeroCartao(JFormattedTextField etNumeroCartao) {
+        this.etNumeroCartao = etNumeroCartao;
+    }
+
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel16() {
+        return jLabel16;
+    }
+
+    public void setjLabel16(JLabel jLabel16) {
+        this.jLabel16 = jLabel16;
+    }
+
+    public JLabel getjLabel17() {
+        return jLabel17;
+    }
+
+    public void setjLabel17(JLabel jLabel17) {
+        this.jLabel17 = jLabel17;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel12() {
+        return jPanel12;
+    }
+
+    public void setjPanel12(JPanel jPanel12) {
+        this.jPanel12 = jPanel12;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JPanel getjPanel4() {
+        return jPanel4;
+    }
+
+    public void setjPanel4(JPanel jPanel4) {
+        this.jPanel4 = jPanel4;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public void setjPanel5(JPanel jPanel5) {
+        this.jPanel5 = jPanel5;
+    }
+
+    public JPanel getjPanel6() {
+        return jPanel6;
+    }
+
+    public void setjPanel6(JPanel jPanel6) {
+        this.jPanel6 = jPanel6;
+    }
+
+    public JPanel getjPanel7() {
+        return jPanel7;
+    }
+
+    public void setjPanel7(JPanel jPanel7) {
+        this.jPanel7 = jPanel7;
+    }
+
+    public JPanel getjPanel8() {
+        return jPanel8;
+    }
+
+    public void setjPanel8(JPanel jPanel8) {
+        this.jPanel8 = jPanel8;
+    }
+
+    public JPanel getjPanel9() {
+        return jPanel9;
+    }
+
+    public void setjPanel9(JPanel jPanel9) {
+        this.jPanel9 = jPanel9;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public void setjSeparator1(JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    public void setjSeparator2(JSeparator jSeparator2) {
+        this.jSeparator2 = jSeparator2;
+    }
+
+    public JSlider getSlComprimento() {
+        return slComprimento;
+    }
+
+    public void setSlComprimento(JSlider slComprimento) {
+        this.slComprimento = slComprimento;
+    }
+
+    public JSlider getSlLargura() {
+        return slLargura;
+    }
+
+    public void setSlLargura(JSlider slLargura) {
+        this.slLargura = slLargura;
+    }
+            
+            
+        
+        
 }

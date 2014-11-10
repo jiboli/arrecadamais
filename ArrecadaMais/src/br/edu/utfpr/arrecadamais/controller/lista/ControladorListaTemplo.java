@@ -125,7 +125,7 @@ public class ControladorListaTemplo {
 
     }
 
-    public void abrirListaFiel() {
+    public void abrirTela() {
         this.telaTemplo.setVisible(true);
         this.telaTemplo.toFront();
     }
