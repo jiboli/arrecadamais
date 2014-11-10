@@ -36,12 +36,14 @@ public class PastorBO  implements ControleClasseCRUD<Pastor>{
     }
 
     @Override
-    public void excluir(Pastor objeto) {
+    public boolean excluir(Pastor objeto) {
+        boolean retorno = false;
         try {
-            dao.excluir(objeto);
+            retorno = dao.excluir(objeto);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        return retorno;
     }
 
     @Override
@@ -74,6 +76,39 @@ public class PastorBO  implements ControleClasseCRUD<Pastor>{
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return retorno;
+    }
+    
+      public List<Pastor> buscarComFiltroGeral(String filtro) {
+        List<Pastor> retorno = null;
+        StringBuilder where = new StringBuilder();
+
+        where.append("nome like '%");
+        where.append(filtro);
+        where.append("%' OR sobrenome like '%");
+        where.append(filtro);
+        where.append("%'");
+
+        try {
+            Integer.parseInt(filtro);
+            where.append(" OR id = ");
+            where.append(filtro);
+            where.append(" OR salario = ");
+            where.append(filtro);
+        } catch (Exception e) {
+
+        }
+
+        try {
+            if (filtro.isEmpty()) {
+                retorno = (List<Pastor>) dao.buscarListaByWhere(Pastor.class, "");
+            } else {
+                retorno = (List<Pastor>) dao.buscarListaByWhere(Pastor.class, where.toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return retorno;
     }
     

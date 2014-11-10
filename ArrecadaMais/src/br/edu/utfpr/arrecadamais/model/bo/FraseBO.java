@@ -8,6 +8,7 @@ package br.edu.utfpr.arrecadamais.model.bo;
 
 import br.edu.utfpr.arrecadamais.controller.ControleClasseCRUD;
 import br.edu.utfpr.arrecadamais.model.dao.DAODinamico;
+import br.edu.utfpr.arrecadamais.model.vo.Fieis;
 import br.edu.utfpr.arrecadamais.model.vo.Frase;
 import java.sql.SQLException;
 import java.util.List;
@@ -39,12 +40,14 @@ public class FraseBO implements ControleClasseCRUD<Frase>{
     }
 
     @Override
-    public void excluir(Frase objeto) {
+    public boolean excluir(Frase objeto) {
+        boolean retorno = false;
         try {
-            dao.excluir(objeto);
+            retorno = dao.excluir(objeto);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        return retorno;
     }
 
     @Override
@@ -77,6 +80,34 @@ public class FraseBO implements ControleClasseCRUD<Frase>{
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return retorno;
+    }
+    
+    public List<Frase> buscarComFiltroGeral(String filtro) {
+        List<Frase> retorno = null;
+        StringBuilder where = new StringBuilder();
+
+        where.append("autor like '%");
+        where.append(filtro);
+        where.append("%'");
+
+        try {
+            where.append(" OR id = ");
+            where.append(filtro);
+        } catch (Exception e) {
+
+        }
+
+        try {
+            if (filtro.isEmpty()) {
+                retorno = (List<Frase>) dao.buscarListaByWhere(Frase.class, "");
+            } else {
+                retorno = (List<Frase>) dao.buscarListaByWhere(Frase.class, where.toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return retorno;
     }
     

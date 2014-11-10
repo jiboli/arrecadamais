@@ -7,6 +7,12 @@
 package br.edu.utfpr.arrecadamais.controller;
 
 import br.edu.utfpr.arrecadamais.view.TelaPrincipal;
+
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFieis;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFrase;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaPastor;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaTemplo;
+import br.edu.utfpr.arrecadamais.controller.transacoes.ControladorCompraTerreno;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -21,13 +27,27 @@ public class ControladorPrincipal {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ex) {
-            Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         
         new TelaPrincipal().setVisible(true);
+
+//        ControladorListaFieis lista = new ControladorListaFieis();
+//        lista.abrirTela();
+
         
+//        ControladorListaPastor lista = new ControladorListaPastor();
+//        lista.abrirTela();
         
+        ControladorListaTemplo lista = new ControladorListaTemplo();
+        lista.abrirTela();
         
+//        ControladorListaFrase lista = new ControladorListaFrase();
+//        lista.abrirTela();
+        
+//        ControladorCompraTerreno cadastro = new ControladorCompraTerreno(null);
+//        cadastro.abrirTela();
+//        
     }
     
 }

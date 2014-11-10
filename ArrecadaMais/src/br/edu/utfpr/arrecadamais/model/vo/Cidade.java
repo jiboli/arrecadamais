@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cidades")
-public class Cidade implements Serializable{
+public class Cidade implements Serializable, VoConstante{
     
     @Id
     @GeneratedValue
@@ -60,6 +60,11 @@ public class Cidade implements Serializable{
     @Override
     public String toString() {
         return this.getNome();
+    }
+
+    @Override
+    public int getIdConstante() {
+        return this.getId();
     }
     
     

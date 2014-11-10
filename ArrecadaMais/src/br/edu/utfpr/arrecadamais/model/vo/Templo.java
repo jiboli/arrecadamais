@@ -24,7 +24,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "templos")
-public class Templo implements Serializable{
+public class Templo implements Serializable, VoConstante{
     
     @Id
     @GeneratedValue
@@ -34,7 +34,7 @@ public class Templo implements Serializable{
     private String nome;
     
     @ManyToOne
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "cidade_id", insertable = true, updatable = false)
     private Cidade cidade;
     
     @Column
@@ -102,6 +102,11 @@ public class Templo implements Serializable{
 
     public void setCapacidade(int capacidade) {
         this.capacidade = capacidade;
+    }
+
+    @Override
+    public int getIdConstante() {
+        return getId();
     }
     
 }

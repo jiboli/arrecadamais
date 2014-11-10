@@ -36,12 +36,14 @@ public class TemploBO  implements ControleClasseCRUD<Templo>{
     }
 
     @Override
-    public void excluir(Templo objeto) {
+    public boolean excluir(Templo objeto) {
+        boolean retorno = false;
         try {
-            dao.excluir(objeto);
+            retorno = dao.excluir(objeto);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        return retorno;
     }
 
     @Override
@@ -74,6 +76,45 @@ public class TemploBO  implements ControleClasseCRUD<Templo>{
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return retorno;
+    }
+    
+      public List<Templo> buscarComFiltroGeral(String filtro) {
+        List<Templo> retorno = null;
+        StringBuilder where = new StringBuilder();
+
+        where.append("nome like '%");
+        where.append(filtro);
+        where.append("%'");
+        where.append(" OR rua like '%");
+        where.append(filtro);
+        where.append("%'");
+        where.append(" OR cidade.nome like '%");
+        where.append(filtro);
+        where.append("%'");
+
+        try {
+            Integer.parseInt(filtro);
+            where.append(" OR id = ");
+            where.append(filtro);
+            where.append(" OR numero = ");
+            where.append(filtro);
+            where.append(" OR capacidade = ");
+            where.append(filtro);
+        } catch (Exception e) {
+
+        }
+
+        try {
+            if (filtro.isEmpty()) {
+                retorno = (List<Templo>) dao.buscarListaByWhere(Templo.class, "");
+            } else {
+                retorno = (List<Templo>) dao.buscarListaByWhere(Templo.class, where.toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return retorno;
     }
     

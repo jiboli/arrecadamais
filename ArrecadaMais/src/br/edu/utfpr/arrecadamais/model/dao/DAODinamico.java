@@ -5,6 +5,7 @@
  */
 package br.edu.utfpr.arrecadamais.model.dao;
 
+import br.edu.utfpr.arrecadamais.model.vo.VoConstante;
 import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -14,7 +15,7 @@ import javax.persistence.Query;
  *
  * @author torto
  */
-public class DAODinamico<T> {
+public class DAODinamico<T extends VoConstante> {
 
     ConexaoBD conexao = ConexaoBD.getInstance();
 
@@ -23,12 +24,16 @@ public class DAODinamico<T> {
     }
 
     public T inserir(T objeto) throws SQLException {
-        EntityManager manager = ConexaoBD.getInstance()
-                .getEntityManager();
+        if (objeto.getIdConstante() == 0) {
+            EntityManager manager = ConexaoBD.getInstance()
+                    .getEntityManager();
 
-        manager.getTransaction().begin();
-        manager.persist(objeto);
-        manager.getTransaction().commit();
+            manager.getTransaction().begin();
+            manager.persist(objeto);
+            manager.getTransaction().commit();
+        } else {
+            alterar(objeto);
+        }
 
         return objeto;
 
@@ -44,14 +49,19 @@ public class DAODinamico<T> {
 
     }
 
-    public void excluir(T objeto) throws SQLException {
+    public boolean excluir(T objeto) throws SQLException {
         EntityManager manager = ConexaoBD.getInstance()
                 .getEntityManager();
+        try {
+            manager.getTransaction().begin();
+            manager.remove(manager.getReference(objeto.getClass(), objeto.getIdConstante()));
+            manager.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
 
-        manager.getTransaction().begin();
-        manager.remove(objeto);
-        manager.getTransaction().commit();
-
+        return true;
     }
 
     public T buscarById(Class classe, int id) {

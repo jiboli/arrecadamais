@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
@@ -22,7 +23,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "pastores")
-public class Pastor implements Serializable{
+public class Pastor implements Serializable, VoConstante{
     
     @Id
     @GeneratedValue
@@ -45,7 +46,7 @@ public class Pastor implements Serializable{
     private double salario;
     
     @ManyToOne
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "cidade_id", insertable = true, updatable = false)
     private Cidade cidade;
 
     public Pastor() {
@@ -105,6 +106,11 @@ public class Pastor implements Serializable{
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public int getIdConstante() {
+        return getId();
     }
     
     

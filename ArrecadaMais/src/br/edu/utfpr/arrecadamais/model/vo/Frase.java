@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "frases")
-public class Frase implements Serializable{
+public class Frase implements Serializable, VoConstante{
     
     @Id
     @GeneratedValue
@@ -56,6 +56,11 @@ public class Frase implements Serializable{
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public int getIdConstante() {
+        return getId();
     }
     
     
