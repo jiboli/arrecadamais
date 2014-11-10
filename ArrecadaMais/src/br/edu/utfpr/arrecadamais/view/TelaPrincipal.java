@@ -30,10 +30,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        btnNovoPastor = new javax.swing.JButton();
+        btnViewPastor = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        btnNovoFiel = new javax.swing.JButton();
+        btnViewFiel = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        btnNovaFrase = new javax.swing.JButton();
+        btnViewFrase = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        btnNovoTemplo = new javax.swing.JButton();
+        btnViewTemplo = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        btnComprarTerreno = new javax.swing.JButton();
+        btnViewTerrenos = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -49,14 +59,57 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Arrecada Mais v.6.6.6");
+        setExtendedState(6);
+        setMaximumSize(new java.awt.Dimension(2147483647, 50));
+        setPreferredSize(new java.awt.Dimension(1366, 125));
+        setResizable(false);
+
+        btnNovoPastor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/page new.png"))); // NOI18N
+        btnNovoPastor.setText("Cadastrar Pastor");
+        jPanel1.add(btnNovoPastor);
+
+        btnViewPastor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/page.png"))); // NOI18N
+        btnViewPastor.setText("Visualisar Pastores");
+        jPanel1.add(btnViewPastor);
 
         jTabbedPane1.addTab("Pastor", jPanel1);
+
+        btnNovoFiel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/page new.png"))); // NOI18N
+        btnNovoFiel.setText("Cadastrar Fiel");
+        jPanel2.add(btnNovoFiel);
+
+        btnViewFiel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/page.png"))); // NOI18N
+        btnViewFiel.setText("Visualizar Fieis");
+        jPanel2.add(btnViewFiel);
+
         jTabbedPane1.addTab("Fiel", jPanel2);
+
+        btnNovaFrase.setText("jButton5");
+        jPanel3.add(btnNovaFrase);
+
+        btnViewFrase.setText("jButton6");
+        jPanel3.add(btnViewFrase);
+
         jTabbedPane1.addTab("Frase", jPanel3);
+
+        btnNovoTemplo.setText("jButton7");
+        jPanel4.add(btnNovoTemplo);
+
+        btnViewTemplo.setText("jButton8");
+        jPanel4.add(btnViewTemplo);
+
         jTabbedPane1.addTab("Templo", jPanel4);
+
+        btnComprarTerreno.setText("jButton9");
+        jPanel5.add(btnComprarTerreno);
+
+        btnViewTerrenos.setText("jButton10");
+        jPanel5.add(btnViewTerrenos);
+
         jTabbedPane1.addTab("Terrenos Sagrados", jPanel5);
 
-        getContentPane().add(jTabbedPane1, java.awt.BorderLayout.NORTH);
+        getContentPane().add(jTabbedPane1, java.awt.BorderLayout.PAGE_START);
 
         jMenu1.setText("Arquivo");
 
@@ -153,6 +206,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnComprarTerreno;
+    private javax.swing.JButton btnNovaFrase;
+    private javax.swing.JButton btnNovoFiel;
+    private javax.swing.JButton btnNovoPastor;
+    private javax.swing.JButton btnNovoTemplo;
+    private javax.swing.JButton btnViewFiel;
+    private javax.swing.JButton btnViewFrase;
+    private javax.swing.JButton btnViewPastor;
+    private javax.swing.JButton btnViewTemplo;
+    private javax.swing.JButton btnViewTerrenos;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

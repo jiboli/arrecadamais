@@ -6,6 +6,7 @@
 
 package br.edu.utfpr.arrecadamais.controller;
 
+import br.edu.utfpr.arrecadamais.view.TelaPrincipal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -23,10 +24,7 @@ public class ControladorPrincipal {
             Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        ControladorCadastroFieis fiel = new ControladorCadastroFieis(null);
-        fiel.abrirFiel();
-        ControladorCadastroPastores pastor = new ControladorCadastroPastores(null);
-        pastor.abrirPastor();
+        new TelaPrincipal().setVisible(true);
         
         
         
