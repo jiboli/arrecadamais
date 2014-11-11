@@ -28,133 +28,131 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        btnNovoPastor = new javax.swing.JButton();
-        btnViewPastor = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        btnNovoFiel = new javax.swing.JButton();
-        btnViewFiel = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        btnNovaFrase = new javax.swing.JButton();
-        btnViewFrase = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        btnNovoTemplo = new javax.swing.JButton();
-        btnViewTemplo = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        btnComprarTerreno = new javax.swing.JButton();
-        btnViewTerrenos = new javax.swing.JButton();
+        btnPastor = new javax.swing.JButton();
+        btnTemplo = new javax.swing.JButton();
+        btnFiel = new javax.swing.JButton();
+        btnFrase = new javax.swing.JButton();
+        btnTerreno = new javax.swing.JButton();
+        btnCEO = new javax.swing.JButton();
+        btnDizimo = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        mnSair = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        mnPastor = new javax.swing.JMenuItem();
+        mnTemplo = new javax.swing.JMenuItem();
+        mnFiel = new javax.swing.JMenuItem();
+        mnFrase = new javax.swing.JMenuItem();
+        mnTerreno = new javax.swing.JMenuItem();
+        mnDizimo = new javax.swing.JMenuItem();
+        mnCEO = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        mnSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Arrecada Mais v.6.6.6");
         setExtendedState(6);
-        setMaximumSize(new java.awt.Dimension(2147483647, 50));
-        setPreferredSize(new java.awt.Dimension(1366, 125));
-        setResizable(false);
+        setPreferredSize(new java.awt.Dimension(800, 500));
 
-        btnNovoPastor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/page new.png"))); // NOI18N
-        btnNovoPastor.setText("Cadastrar Pastor");
-        jPanel1.add(btnNovoPastor);
+        jPanel2.setLayout(new java.awt.GridLayout(7, 1, 2, 5));
 
-        btnViewPastor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/page.png"))); // NOI18N
-        btnViewPastor.setText("Visualisar Pastores");
-        jPanel1.add(btnViewPastor);
+        btnPastor.setText("Pastor");
+        jPanel2.add(btnPastor);
 
-        jTabbedPane1.addTab("Pastor", jPanel1);
+        btnTemplo.setText("Templo");
+        btnTemplo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTemploActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnTemplo);
 
-        btnNovoFiel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/page new.png"))); // NOI18N
-        btnNovoFiel.setText("Cadastrar Fiel");
-        jPanel2.add(btnNovoFiel);
+        btnFiel.setText("Fiel");
+        jPanel2.add(btnFiel);
 
-        btnViewFiel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/page.png"))); // NOI18N
-        btnViewFiel.setText("Visualizar Fieis");
-        jPanel2.add(btnViewFiel);
+        btnFrase.setText("Frase");
+        jPanel2.add(btnFrase);
 
-        jTabbedPane1.addTab("Fiel", jPanel2);
+        btnTerreno.setText("Terreno");
+        jPanel2.add(btnTerreno);
 
-        btnNovaFrase.setText("jButton5");
-        jPanel3.add(btnNovaFrase);
+        btnCEO.setText("C.E.O");
+        jPanel2.add(btnCEO);
 
-        btnViewFrase.setText("jButton6");
-        jPanel3.add(btnViewFrase);
+        btnDizimo.setText("Dízimo");
+        btnDizimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDizimoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnDizimo);
 
-        jTabbedPane1.addTab("Frase", jPanel3);
+        getContentPane().add(jPanel2, java.awt.BorderLayout.WEST);
 
-        btnNovoTemplo.setText("jButton7");
-        jPanel4.add(btnNovoTemplo);
+        jPanel1.setLayout(new java.awt.GridLayout());
 
-        btnViewTemplo.setText("jButton8");
-        jPanel4.add(btnViewTemplo);
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/logo.png"))); // NOI18N
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabel1);
 
-        jTabbedPane1.addTab("Templo", jPanel4);
-
-        btnComprarTerreno.setText("jButton9");
-        jPanel5.add(btnComprarTerreno);
-
-        btnViewTerrenos.setText("jButton10");
-        jPanel5.add(btnViewTerrenos);
-
-        jTabbedPane1.addTab("Terrenos Sagrados", jPanel5);
-
-        getContentPane().add(jTabbedPane1, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         jMenu1.setText("Arquivo");
 
-        jMenu5.setText("Novo");
-
-        jMenuItem4.setText("Pastor");
-        jMenu5.add(jMenuItem4);
-
-        jMenuItem5.setText("Templo");
-        jMenu5.add(jMenuItem5);
-
-        jMenuItem6.setText("Fiel");
-        jMenu5.add(jMenuItem6);
-
-        jMenuItem7.setText("Frase");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem7);
-
-        jMenu1.add(jMenu5);
-
-        jMenuItem2.setText("Fechar");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
-        jMenu1.add(jSeparator1);
-
-        jMenuItem3.setText("Sair");
-        jMenu1.add(jMenuItem3);
+        mnSair.setText("Sair");
+        jMenu1.add(mnSair);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Editar");
-        jMenuBar1.add(jMenu2);
+        jMenu3.setText("Entidade");
 
-        jMenu3.setText("Visualizar");
+        mnPastor.setText("Pastor");
+        jMenu3.add(mnPastor);
+
+        mnTemplo.setText("Templo");
+        jMenu3.add(mnTemplo);
+
+        mnFiel.setText("Fiel");
+        jMenu3.add(mnFiel);
+
+        mnFrase.setText("Frase");
+        mnFrase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnFraseActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mnFrase);
+
+        mnTerreno.setText("Terreno");
+        jMenu3.add(mnTerreno);
+
+        mnDizimo.setText("Dízimo");
+        jMenu3.add(mnDizimo);
+
+        mnCEO.setText("Contribuições Espontaneas Obrigatórias");
+        mnCEO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnCEOActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mnCEO);
+
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Ajuda");
+
+        mnSobre.setText("Sobre");
+        mnSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnSobreActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mnSobre);
+
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -162,13 +160,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void mnFraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnFraseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_mnFraseActionPerformed
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+    private void mnSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnSobreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
+    }//GEN-LAST:event_mnSobreActionPerformed
+
+    private void mnCEOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCEOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnCEOActionPerformed
+
+    private void btnTemploActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTemploActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTemploActionPerformed
+
+    private void btnDizimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDizimoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDizimoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,34 +216,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnComprarTerreno;
-    private javax.swing.JButton btnNovaFrase;
-    private javax.swing.JButton btnNovoFiel;
-    private javax.swing.JButton btnNovoPastor;
-    private javax.swing.JButton btnNovoTemplo;
-    private javax.swing.JButton btnViewFiel;
-    private javax.swing.JButton btnViewFrase;
-    private javax.swing.JButton btnViewPastor;
-    private javax.swing.JButton btnViewTemplo;
-    private javax.swing.JButton btnViewTerrenos;
+    private javax.swing.JButton btnCEO;
+    private javax.swing.JButton btnDizimo;
+    private javax.swing.JButton btnFiel;
+    private javax.swing.JButton btnFrase;
+    private javax.swing.JButton btnPastor;
+    private javax.swing.JButton btnTemplo;
+    private javax.swing.JButton btnTerreno;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JMenuItem mnCEO;
+    private javax.swing.JMenuItem mnDizimo;
+    private javax.swing.JMenuItem mnFiel;
+    private javax.swing.JMenuItem mnFrase;
+    private javax.swing.JMenuItem mnPastor;
+    private javax.swing.JMenuItem mnSair;
+    private javax.swing.JMenuItem mnSobre;
+    private javax.swing.JMenuItem mnTemplo;
+    private javax.swing.JMenuItem mnTerreno;
     // End of variables declaration//GEN-END:variables
 }

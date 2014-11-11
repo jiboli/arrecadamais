@@ -56,7 +56,7 @@ public class ViewTemplo extends javax.swing.JFrame {
         jPanel3.setLayout(new java.awt.GridLayout(2, 1));
 
         jPanel6.setPreferredSize(new java.awt.Dimension(676, 50));
-        jPanel6.setLayout(new java.awt.GridLayout());
+        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/ViewTemplos.png"))); // NOI18N

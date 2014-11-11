@@ -26,11 +26,13 @@ public class ControladorPrincipal {
     public static void main(String[] args){
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            TelaPrincipal tela = new TelaPrincipal();
+            tela.setVisible(true);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         
-        new TelaPrincipal().setVisible(true);
+        
 
 //        ControladorListaFieis lista = new ControladorListaFieis();
 //        lista.abrirTela();
@@ -39,8 +41,7 @@ public class ControladorPrincipal {
 //        ControladorListaPastor lista = new ControladorListaPastor();
 //        lista.abrirTela();
         
-        ControladorListaTemplo lista = new ControladorListaTemplo();
-        lista.abrirTela();
+       
         
 //        ControladorListaFrase lista = new ControladorListaFrase();
 //        lista.abrirTela();
