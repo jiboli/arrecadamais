@@ -10,12 +10,12 @@ package br.edu.utfpr.arrecadamais.view.views;
  *
  * @author JoãoHenrique
  */
-public class ViewTerrenos extends javax.swing.JFrame {
+public class ViewCEO extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewTerrenos
+     * Creates new form ViewCEO
      */
-    public ViewTerrenos() {
+    public ViewCEO() {
         initComponents();
     }
 
@@ -39,11 +39,9 @@ public class ViewTerrenos extends javax.swing.JFrame {
         edtBuscar = new javax.swing.JTextField();
         btBuscar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        btInserir = new javax.swing.JButton();
         btFechar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 300));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         jPanel1.setLayout(new java.awt.BorderLayout());
@@ -55,14 +53,14 @@ public class ViewTerrenos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nome Cliente", "Área do Terreno", "Valor Total", "Tipo de Terreno", "Decoração"
+                "ID", "Fiel", "Valor Pago"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -74,9 +72,6 @@ public class ViewTerrenos extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tbTabela);
-        if (tbTabela.getColumnModel().getColumnCount() > 0) {
-            tbTabela.getColumnModel().getColumn(0).setPreferredWidth(40);
-        }
 
         jPanel2.add(jScrollPane1);
 
@@ -86,10 +81,10 @@ public class ViewTerrenos extends javax.swing.JFrame {
         jPanel3.setLayout(new java.awt.GridLayout(2, 1));
 
         jPanel6.setPreferredSize(new java.awt.Dimension(676, 50));
-        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel6.setLayout(new java.awt.GridLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/media/ViewTerrenos.png"))); // NOI18N
+        jLabel1.setText("Contribuição Espontãneas Obrigatórias");
         jPanel6.add(jLabel1);
 
         jPanel3.add(jPanel6);
@@ -108,14 +103,6 @@ public class ViewTerrenos extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, java.awt.BorderLayout.NORTH);
 
-        btInserir.setText("Comprar Novo Terreno");
-        btInserir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btInserirActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btInserir);
-
         btFechar.setText("Fechar");
         jPanel4.add(btFechar);
 
@@ -125,10 +112,6 @@ public class ViewTerrenos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btInserirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,20 +130,20 @@ public class ViewTerrenos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewTerrenos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCEO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewTerrenos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCEO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewTerrenos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCEO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewTerrenos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCEO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewTerrenos().setVisible(true);
+                new ViewCEO().setVisible(true);
             }
         });
     }
@@ -168,7 +151,6 @@ public class ViewTerrenos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btBuscar;
     private javax.swing.JButton btFechar;
-    private javax.swing.JButton btInserir;
     private javax.swing.JTextField edtBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

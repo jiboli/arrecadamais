@@ -6,6 +6,13 @@
 
 package br.edu.utfpr.arrecadamais.view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author JoãoHenrique
@@ -92,7 +99,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.WEST);
 
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/MEDIA/logo.png"))); // NOI18N
@@ -240,4 +247,189 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnTemplo;
     private javax.swing.JMenuItem mnTerreno;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnCEO() {
+        return btnCEO;
+    }
+
+    public void setBtnCEO(JButton btnCEO) {
+        this.btnCEO = btnCEO;
+    }
+
+    public JButton getBtnDizimo() {
+        return btnDizimo;
+    }
+
+    public void setBtnDizimo(JButton btnDizimo) {
+        this.btnDizimo = btnDizimo;
+    }
+
+    public JButton getBtnFiel() {
+        return btnFiel;
+    }
+
+    public void setBtnFiel(JButton btnFiel) {
+        this.btnFiel = btnFiel;
+    }
+
+    public JButton getBtnFrase() {
+        return btnFrase;
+    }
+
+    public void setBtnFrase(JButton btnFrase) {
+        this.btnFrase = btnFrase;
+    }
+
+    public JButton getBtnPastor() {
+        return btnPastor;
+    }
+
+    public void setBtnPastor(JButton btnPastor) {
+        this.btnPastor = btnPastor;
+    }
+
+    public JButton getBtnTemplo() {
+        return btnTemplo;
+    }
+
+    public void setBtnTemplo(JButton btnTemplo) {
+        this.btnTemplo = btnTemplo;
+    }
+
+    public JButton getBtnTerreno() {
+        return btnTerreno;
+    }
+
+    public void setBtnTerreno(JButton btnTerreno) {
+        this.btnTerreno = btnTerreno;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public void setjMenu1(JMenu jMenu1) {
+        this.jMenu1 = jMenu1;
+    }
+
+    public JMenu getjMenu3() {
+        return jMenu3;
+    }
+
+    public void setjMenu3(JMenu jMenu3) {
+        this.jMenu3 = jMenu3;
+    }
+
+    public JMenu getjMenu4() {
+        return jMenu4;
+    }
+
+    public void setjMenu4(JMenu jMenu4) {
+        this.jMenu4 = jMenu4;
+    }
+
+    public JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public void setjMenuBar1(JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JMenuItem getMnCEO() {
+        return mnCEO;
+    }
+
+    public void setMnCEO(JMenuItem mnCEO) {
+        this.mnCEO = mnCEO;
+    }
+
+    public JMenuItem getMnDizimo() {
+        return mnDizimo;
+    }
+
+    public void setMnDizimo(JMenuItem mnDizimo) {
+        this.mnDizimo = mnDizimo;
+    }
+
+    public JMenuItem getMnFiel() {
+        return mnFiel;
+    }
+
+    public void setMnFiel(JMenuItem mnFiel) {
+        this.mnFiel = mnFiel;
+    }
+
+    public JMenuItem getMnFrase() {
+        return mnFrase;
+    }
+
+    public void setMnFrase(JMenuItem mnFrase) {
+        this.mnFrase = mnFrase;
+    }
+
+    public JMenuItem getMnPastor() {
+        return mnPastor;
+    }
+
+    public void setMnPastor(JMenuItem mnPastor) {
+        this.mnPastor = mnPastor;
+    }
+
+    public JMenuItem getMnSair() {
+        return mnSair;
+    }
+
+    public void setMnSair(JMenuItem mnSair) {
+        this.mnSair = mnSair;
+    }
+
+    public JMenuItem getMnSobre() {
+        return mnSobre;
+    }
+
+    public void setMnSobre(JMenuItem mnSobre) {
+        this.mnSobre = mnSobre;
+    }
+
+    public JMenuItem getMnTemplo() {
+        return mnTemplo;
+    }
+
+    public void setMnTemplo(JMenuItem mnTemplo) {
+        this.mnTemplo = mnTemplo;
+    }
+
+    public JMenuItem getMnTerreno() {
+        return mnTerreno;
+    }
+
+    public void setMnTerreno(JMenuItem mnTerreno) {
+        this.mnTerreno = mnTerreno;
+    }
+    
 }

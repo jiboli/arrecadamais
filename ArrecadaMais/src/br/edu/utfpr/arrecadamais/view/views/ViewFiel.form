@@ -182,6 +182,16 @@
                 <Property name="text" type="java.lang.String" value="Fechar"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JButton" name="btnDizimo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Pagar D&#xed;zimo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnCEO">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Pagar CEO"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

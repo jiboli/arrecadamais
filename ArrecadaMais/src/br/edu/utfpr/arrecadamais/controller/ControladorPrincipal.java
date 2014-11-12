@@ -22,15 +22,15 @@ import javax.swing.UIManager;
  * @author JoãoHenrique
  */
 public class ControladorPrincipal {
-    
+
     public static void main(String[] args){
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            TelaPrincipal tela = new TelaPrincipal();
-            tela.setVisible(true);
+            new ControladorTelaPrincipal();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        
         
         
 

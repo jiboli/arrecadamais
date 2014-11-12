@@ -6,20 +6,189 @@
 
 package br.edu.utfpr.arrecadamais.controller;
 
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFieis;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFrase;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaPastor;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaTemplo;
 import br.edu.utfpr.arrecadamais.view.TelaPrincipal;
+import br.edu.utfpr.arrecadamais.view.views.ViewCEO;
+import br.edu.utfpr.arrecadamais.view.views.ViewDizimo;
+import br.edu.utfpr.arrecadamais.view.views.ViewFiel;
+import br.edu.utfpr.arrecadamais.view.views.ViewFrase;
+import br.edu.utfpr.arrecadamais.view.views.ViewPastores;
+import br.edu.utfpr.arrecadamais.view.views.ViewTemplo;
+import br.edu.utfpr.arrecadamais.view.views.ViewTerrenos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 /**
  *
  * @author JoãoHenrique
  */
 public class ControladorTelaPrincipal {
-    private TelaPrincipal telaP;
+    private TelaPrincipal telaP = new TelaPrincipal();
 
     public ControladorTelaPrincipal() {
        
+        this.telaP.getMnTerreno().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //cancelar();//fecha a tela
+               ViewTerrenos terreno = new ViewTerrenos();
+                terreno.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                terreno.setVisible(true);
+            }
+        });
+        this.telaP.getBtnTerreno().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ViewTerrenos terreno = new ViewTerrenos();
+                terreno.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                terreno.setVisible(true);
+            }           
+            
+        });
+        
+        this.telaP.getMnTemplo().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ControladorListaTemplo templo = new ControladorListaTemplo();
+                templo.abrirTela();
+            }
+            
+        });
+        this.telaP.getBtnTemplo().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ControladorListaTemplo templo = new ControladorListaTemplo();
+                templo.abrirTela();
+            }
+            
+        });
+        
+        this.telaP.getMnSair().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                telaP.dispose();
+            }
+            
+        });
+        
+        this.telaP.getMnPastor().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ControladorListaPastor pastor = new ControladorListaPastor();
+                pastor.abrirTela();
+                
+            }
+            
+        });
+        
+        this.telaP.getBtnPastor().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ControladorListaPastor pastor = new ControladorListaPastor();
+                pastor.abrirTela();
+                
+            }
+            
+        });
+        
+        this.telaP.getMnFrase().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ControladorListaFrase frase = new ControladorListaFrase();
+                frase.abrirTela();
+                
+            }
+        
+        });
+        this.telaP.getBtnFrase().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ControladorListaFrase frase = new ControladorListaFrase();
+                frase.abrirTela();
+                
+            }
+        
+        });
+        
+        this.telaP.getMnFiel().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ControladorListaFieis fiel = new ControladorListaFieis();
+                fiel.abrirTela();
+            }
+            
+        });
+        this.telaP.getBtnFiel().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ControladorListaFieis fiel = new ControladorListaFieis();
+                fiel.abrirTela();
+            }
+            
+        });
+        
+        this.telaP.getMnDizimo().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ViewDizimo dizimo = new ViewDizimo();
+                dizimo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                dizimo.setVisible(true);
+            }
+            
+        });
+        this.telaP.getBtnDizimo().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ViewDizimo dizimo = new ViewDizimo();
+                dizimo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                dizimo.setVisible(true);
+            }
+            
+        });
+        
+        this.telaP.getMnCEO().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ViewCEO ceo = new ViewCEO();
+                ceo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                ceo.setVisible(true);
+            }
+            
+        });
+        this.telaP.getBtnCEO().addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ViewCEO ceo = new ViewCEO();
+                ceo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                ceo.setVisible(true);
+            }
+            
+        });
+        
+        telaP.setVisible(true);
+        
+        }
+        
     }
     
     
-}
+

@@ -49,6 +49,8 @@ public class ViewFiel extends javax.swing.JFrame {
         btInserir = new javax.swing.JButton();
         btExcluir = new javax.swing.JButton();
         btFechar = new javax.swing.JButton();
+        btnDizimo = new javax.swing.JButton();
+        btnCEO = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
@@ -126,6 +128,12 @@ public class ViewFiel extends javax.swing.JFrame {
         btFechar.setText("Fechar");
         jPanel4.add(btFechar);
 
+        btnDizimo.setText("Pagar Dízimo");
+        jPanel4.add(btnDizimo);
+
+        btnCEO.setText("Pagar CEO");
+        jPanel4.add(btnCEO);
+
         jPanel1.add(jPanel4, java.awt.BorderLayout.PAGE_END);
 
         getContentPane().add(jPanel1);
@@ -177,6 +185,8 @@ public class ViewFiel extends javax.swing.JFrame {
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btFechar;
     private javax.swing.JButton btInserir;
+    private javax.swing.JButton btnCEO;
+    private javax.swing.JButton btnDizimo;
     private javax.swing.JTextField edtBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
