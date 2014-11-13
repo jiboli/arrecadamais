@@ -6,23 +6,16 @@
 
 package br.edu.utfpr.arrecadamais.view.views;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-
 /**
  *
  * @author JoãoHenrique
  */
-public class ViewFiel extends javax.swing.JFrame {
+public class ViewTerrenos extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewFiel
+     * Creates new form ViewTerrenos
      */
-    public ViewFiel() {
+    public ViewTerrenos() {
         initComponents();
     }
 
@@ -47,12 +40,10 @@ public class ViewFiel extends javax.swing.JFrame {
         btBuscar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         btInserir = new javax.swing.JButton();
-        btExcluir = new javax.swing.JButton();
         btFechar = new javax.swing.JButton();
-        btnDizimo = new javax.swing.JButton();
-        btnCEO = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(500, 300));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         jPanel1.setLayout(new java.awt.BorderLayout());
@@ -64,14 +55,14 @@ public class ViewFiel extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nome", "Sobrenome", "Telefone"
+                "ID", "Nome Cliente", "Área do Terreno", "Valor Total", "Tipo de Terreno", "Decoração"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -83,6 +74,9 @@ public class ViewFiel extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tbTabela);
+        if (tbTabela.getColumnModel().getColumnCount() > 0) {
+            tbTabela.getColumnModel().getColumn(0).setPreferredWidth(40);
+        }
 
         jPanel2.add(jScrollPane1);
 
@@ -95,7 +89,7 @@ public class ViewFiel extends javax.swing.JFrame {
         jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/media/ViewFiel.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/media/ViewTerrenos.png"))); // NOI18N
         jPanel6.add(jLabel1);
 
         jPanel3.add(jPanel6);
@@ -114,7 +108,7 @@ public class ViewFiel extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, java.awt.BorderLayout.NORTH);
 
-        btInserir.setText("Cadastrar novo Fiel");
+        btInserir.setText("Comprar Novo Terreno");
         btInserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btInserirActionPerformed(evt);
@@ -122,17 +116,8 @@ public class ViewFiel extends javax.swing.JFrame {
         });
         jPanel4.add(btInserir);
 
-        btExcluir.setText("Excluir Fiel Selecionado");
-        jPanel4.add(btExcluir);
-
         btFechar.setText("Fechar");
         jPanel4.add(btFechar);
-
-        btnDizimo.setText("Pagar Dízimo");
-        jPanel4.add(btnDizimo);
-
-        btnCEO.setText("Pagar CEO");
-        jPanel4.add(btnCEO);
 
         jPanel1.add(jPanel4, java.awt.BorderLayout.PAGE_END);
 
@@ -162,31 +147,28 @@ public class ViewFiel extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewFiel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTerrenos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewFiel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTerrenos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewFiel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTerrenos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewFiel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTerrenos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewFiel().setVisible(true);
+                new ViewTerrenos().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btBuscar;
-    private javax.swing.JButton btExcluir;
     private javax.swing.JButton btFechar;
     private javax.swing.JButton btInserir;
-    private javax.swing.JButton btnCEO;
-    private javax.swing.JButton btnDizimo;
     private javax.swing.JTextField edtBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -198,120 +180,4 @@ public class ViewFiel extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbTabela;
     // End of variables declaration//GEN-END:variables
-
-
-    public JButton getBtBuscar() {
-        return btBuscar;
-    }
-
-    public void setBtBuscar(JButton btBuscar) {
-        this.btBuscar = btBuscar;
-    }
-
-    public JButton getBtExcluir() {
-        return btExcluir;
-    }
-
-    public void setBtExcluir(JButton btExcluir) {
-        this.btExcluir = btExcluir;
-    }
-
-    public JButton getBtFechar() {
-        return btFechar;
-    }
-
-    public void setBtFechar(JButton btFechar) {
-        this.btFechar = btFechar;
-    }
-
-    public JButton getBtInserir() {
-        return btInserir;
-    }
-
-    public void setBtInserir(JButton btInserir) {
-        this.btInserir = btInserir;
-    }
-
-    public JTextField getEdtBuscar() {
-        return edtBuscar;
-    }
-
-    public void setEdtBuscar(JTextField edtBuscar) {
-        this.edtBuscar = edtBuscar;
-    }
-
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
-    }
-
-    public JPanel getjPanel1() {
-        return jPanel1;
-    }
-
-    public void setjPanel1(JPanel jPanel1) {
-        this.jPanel1 = jPanel1;
-    }
-
-    public JPanel getjPanel2() {
-        return jPanel2;
-    }
-
-    public void setjPanel2(JPanel jPanel2) {
-        this.jPanel2 = jPanel2;
-    }
-
-    public JPanel getjPanel3() {
-        return jPanel3;
-    }
-
-    public void setjPanel3(JPanel jPanel3) {
-        this.jPanel3 = jPanel3;
-    }
-
-    public JPanel getjPanel4() {
-        return jPanel4;
-    }
-
-    public void setjPanel4(JPanel jPanel4) {
-        this.jPanel4 = jPanel4;
-    }
-
-    public JPanel getjPanel5() {
-        return jPanel5;
-    }
-
-    public void setjPanel5(JPanel jPanel5) {
-        this.jPanel5 = jPanel5;
-    }
-
-    public JPanel getjPanel6() {
-        return jPanel6;
-    }
-
-    public void setjPanel6(JPanel jPanel6) {
-        this.jPanel6 = jPanel6;
-    }
-
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
-    }
-
-    public JTable getTbTabela() {
-        return tbTabela;
-    }
-
-    public void setTbTabela(JTable tbTabela) {
-        this.tbTabela = tbTabela;
-    }
-    
-    
-        
 }
