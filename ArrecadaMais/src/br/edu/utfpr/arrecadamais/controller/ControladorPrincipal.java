@@ -30,7 +30,7 @@ public class ControladorPrincipal {
             ex.printStackTrace();
         }
         
-        new TelaPrincipal().setVisible(true);
+//        new TelaPrincipal().setVisible(true);
 
 //        ControladorListaFieis lista = new ControladorListaFieis();
 //        lista.abrirTela();
@@ -39,15 +39,15 @@ public class ControladorPrincipal {
 //        ControladorListaPastor lista = new ControladorListaPastor();
 //        lista.abrirTela();
         
-        ControladorListaTemplo lista = new ControladorListaTemplo();
-        lista.abrirTela();
+//        ControladorListaTemplo lista = new ControladorListaTemplo();
+//        lista.abrirTela();
         
 //        ControladorListaFrase lista = new ControladorListaFrase();
 //        lista.abrirTela();
         
-//        ControladorCompraTerreno cadastro = new ControladorCompraTerreno(null);
-//        cadastro.abrirTela();
-//        
+        ControladorCompraTerreno cadastro = new ControladorCompraTerreno(null);
+        cadastro.abrirTela();
+        
     }
     
 }

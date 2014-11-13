@@ -66,6 +66,7 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         cbNumeroParcela = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
+        lbJuros = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -154,7 +155,6 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jPanel4.add(jLabel10);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel11.setText("R$ 1000000,000");
         jPanel4.add(jLabel11);
 
         jLabel12.setText("Número de Parcelas:");
@@ -165,6 +165,7 @@ public class CompraTerrenos extends javax.swing.JFrame {
 
         jLabel13.setText("Com % de Juros Insignificantes.");
         jPanel4.add(jLabel13);
+        jPanel4.add(lbJuros);
 
         jPanel3.add(jPanel4);
 
@@ -363,6 +364,7 @@ public class CompraTerrenos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel lbJuros;
     private javax.swing.JSlider slComprimento;
     private javax.swing.JSlider slLargura;
     // End of variables declaration//GEN-END:variables
@@ -701,6 +703,14 @@ public class CompraTerrenos extends javax.swing.JFrame {
 
     public void setSlLargura(JSlider slLargura) {
         this.slLargura = slLargura;
+    }
+
+    public JLabel getLbJuros() {
+        return lbJuros;
+    }
+
+    public void setLbJuros(JLabel lbJuros) {
+        this.lbJuros = lbJuros;
     }
             
             

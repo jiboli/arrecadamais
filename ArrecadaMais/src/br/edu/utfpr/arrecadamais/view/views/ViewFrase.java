@@ -82,26 +82,12 @@ public class ViewFrase extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Autor"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tbTabela.setColumnSelectionAllowed(true);
-        tbTabela.setPreferredSize(new java.awt.Dimension(100, 0));
+        ));
+        tbTabela.setMaximumSize(new java.awt.Dimension(1000, 1000));
+        tbTabela.setOpaque(false);
+        tbTabela.setPreferredSize(new java.awt.Dimension(100, 1000));
         tbTabela.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbTabela);
         tbTabela.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
