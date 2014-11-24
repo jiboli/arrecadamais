@@ -147,6 +147,16 @@
         <Property name="rows" type="int" value="3"/>
       </Layout>
       <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nome Cliente"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="edNomeCliente">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edNomeClienteActionPerformed"/>
+          </Events>
+        </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="text" type="java.lang.String" value="     Valor M&#xed;nimo para Pagamento do D&#xed;zimo:"/>

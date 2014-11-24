@@ -7,16 +7,16 @@ package br.edu.utfpr.arrecadamais.model.bo;
 
 import br.edu.utfpr.arrecadamais.controller.ControleClasseCRUD;
 import br.edu.utfpr.arrecadamais.model.dao.DAODinamico;
-import br.edu.utfpr.arrecadamais.model.vo.Dizimo;
+import br.edu.utfpr.arrecadamais.model.vo.Ceo;
 import java.sql.SQLException;
 import java.util.List;
 
-public class DizimoBO implements ControleClasseCRUD<Dizimo> {
+public class CeoBO implements ControleClasseCRUD<Ceo> {
 
-    private DAODinamico<Dizimo> dao = new DAODinamico<Dizimo>();
+    private DAODinamico<Ceo> dao = new DAODinamico<Ceo>();
 
     @Override
-    public Dizimo inserir(Dizimo objeto) {
+    public Ceo inserir(Ceo objeto) {
         try {
             objeto = dao.inserir(objeto);
         } catch (SQLException ex) {
@@ -27,7 +27,7 @@ public class DizimoBO implements ControleClasseCRUD<Dizimo> {
     }
 
     @Override
-    public boolean excluir(Dizimo objeto) {
+    public boolean excluir(Ceo objeto) {
         boolean retorno = false;
         try {
             retorno = dao.excluir(objeto);
@@ -38,7 +38,7 @@ public class DizimoBO implements ControleClasseCRUD<Dizimo> {
     }
 
     @Override
-    public Dizimo alterar(Dizimo objeto) {
+    public Ceo alterar(Ceo objeto) {
         try {
             dao.alterar(objeto);
         } catch (SQLException ex) {
@@ -48,10 +48,10 @@ public class DizimoBO implements ControleClasseCRUD<Dizimo> {
     }
 
     @Override
-    public List<Dizimo> buscarTotal() {
-        List<Dizimo> listaRetorno = null;
+    public List<Ceo> buscarTotal() {
+        List<Ceo> listaRetorno = null;
         try {
-            listaRetorno = (List<Dizimo>) dao.buscarListaByWhere(Dizimo.class, "");
+            listaRetorno = (List<Ceo>) dao.buscarListaByWhere(Ceo.class, "");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -60,18 +60,18 @@ public class DizimoBO implements ControleClasseCRUD<Dizimo> {
     }
 
     @Override
-    public Dizimo buscarByID(int ID) {
-        Dizimo retorno = null;
+    public Ceo buscarByID(int ID) {
+        Ceo retorno = null;
         try {
-            retorno = (Dizimo) dao.buscarById(Dizimo.class, ID);
+            retorno = (Ceo) dao.buscarById(Ceo.class, ID);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return retorno;
     }
     
-    public List<Dizimo> buscarComFiltroGeral(String filtro){
-         List<Dizimo> retorno = null;
+    public List<Ceo> buscarComFiltroGeral(String filtro){
+         List<Ceo> retorno = null;
         StringBuilder where = new StringBuilder();
 
         where.append("nomeCliente like '%");
@@ -82,7 +82,7 @@ public class DizimoBO implements ControleClasseCRUD<Dizimo> {
             Integer.parseInt(filtro);
             where.append(" OR id = ");
             where.append(filtro);   
-            where.append(" OR (valormin + valoradicionar) = ");
+            where.append(" OR valor = ");
             where.append(filtro);
         } catch (Exception e) {
 
@@ -90,9 +90,9 @@ public class DizimoBO implements ControleClasseCRUD<Dizimo> {
 
         try {
             if (filtro.isEmpty()) {
-                retorno = (List<Dizimo>) dao.buscarListaByWhere(Dizimo.class, "");
+                retorno = (List<Ceo>) dao.buscarListaByWhere(Ceo.class, "");
             } else {
-                retorno = (List<Dizimo>) dao.buscarListaByWhere(Dizimo.class, where.toString());
+                retorno = (List<Ceo>) dao.buscarListaByWhere(Ceo.class, where.toString());
             }
         } catch (Exception e) {
             e.printStackTrace();

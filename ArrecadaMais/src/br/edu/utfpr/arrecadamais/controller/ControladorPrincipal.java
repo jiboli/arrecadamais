@@ -6,6 +6,8 @@
 
 package br.edu.utfpr.arrecadamais.controller;
 
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaCeo;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaDizimo;
 import br.edu.utfpr.arrecadamais.view.TelaPrincipal;
  
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFieis;
@@ -56,8 +58,14 @@ public class ControladorPrincipal {
 //        ControladorListaTerrenos lista = new ControladorListaTerrenos();
 //        lista.abrirTela();
         
-        ControladorCadastroDizimo cadastro = new ControladorCadastroDizimo(null);
-        cadastro.abrirDizimo();
+//        ControladorCadastroDizimo cadastro = new ControladorCadastroDizimo(null);
+//        cadastro.abrirDizimo();
+        
+//        ControladorListaDizimo lista = new ControladorListaDizimo();
+//        lista.abrirTela();
+        
+        ControladorListaCeo lista = new ControladorListaCeo();
+        lista.abrirTela();
     }
     
 }

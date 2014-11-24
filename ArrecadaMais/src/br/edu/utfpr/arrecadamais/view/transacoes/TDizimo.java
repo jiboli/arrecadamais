@@ -52,6 +52,8 @@ public class TDizimo extends javax.swing.JFrame {
         edDataValidade = new javax.swing.JFormattedTextField();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        edNomeCliente = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -109,6 +111,16 @@ public class TDizimo extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 2, 5, 5));
 
+        jLabel4.setText("Nome Cliente");
+        jPanel1.add(jLabel4);
+
+        edNomeCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edNomeClienteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(edNomeCliente);
+
         jLabel6.setText("     Valor Mínimo para Pagamento do Dízimo:");
         jPanel1.add(jLabel6);
         jPanel1.add(jTextField2);
@@ -121,6 +133,10 @@ public class TDizimo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void edNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edNomeClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edNomeClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,6 +176,7 @@ public class TDizimo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField edCodigoSeguraca;
     private javax.swing.JFormattedTextField edDataValidade;
+    private javax.swing.JTextField edNomeCliente;
     private javax.swing.JTextField etNomeCartao;
     private javax.swing.JFormattedTextField etNumeroCartao;
     private javax.swing.JButton jButton1;
@@ -170,6 +187,7 @@ public class TDizimo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
@@ -349,6 +367,16 @@ public class TDizimo extends javax.swing.JFrame {
     public void setjTextField2(JTextField jTextField2) {
         this.jTextField2 = jTextField2;
     }
+
+    public JTextField getEdNomeCliente() {
+        return edNomeCliente;
+    }
+
+    public void setEdNomeCliente(JTextField edNomeCliente) {
+        this.edNomeCliente = edNomeCliente;
+    }
+    
+    
         
         
 }

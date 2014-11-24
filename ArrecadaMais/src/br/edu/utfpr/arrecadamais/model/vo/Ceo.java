@@ -17,18 +17,15 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "dizimo")
-public class Dizimo implements Serializable, VoConstante{
+@Table(name = "ceo")
+public class Ceo implements Serializable, VoConstante{
     
     @Id
     @GeneratedValue
     private int id;
     
     @Column
-    private double valorMin;
-    
-    @Column
-    private double valorAdicionar;
+    private double valor;
     
     @Column
     private String nomeCliente;
@@ -46,7 +43,7 @@ public class Dizimo implements Serializable, VoConstante{
     @Temporal(TemporalType.DATE)
     private Date dataValidade;
 
-    public Dizimo() {
+    public Ceo() {
     }
 
     public int getId() {
@@ -57,20 +54,12 @@ public class Dizimo implements Serializable, VoConstante{
         this.id = id;
     }
 
-    public double getValorMin() {
-        return valorMin;
+    public double getValor() {
+        return valor;
     }
 
-    public void setValorMin(double valorMin) {
-        this.valorMin = valorMin;
-    }
-
-    public double getValorAdicionar() {
-        return valorAdicionar;
-    }
-
-    public void setValorAdicionar(double valorAdicionar) {
-        this.valorAdicionar = valorAdicionar;
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
     public String getNumeroCartao() {
