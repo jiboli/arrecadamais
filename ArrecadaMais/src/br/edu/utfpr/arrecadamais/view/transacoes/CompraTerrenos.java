@@ -82,7 +82,10 @@ public class CompraTerrenos extends javax.swing.JFrame {
         slLargura = new javax.swing.JSlider();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
+        jPanel12.setMaximumSize(new java.awt.Dimension(610, 32767));
+        jPanel12.setOpaque(false);
         jPanel12.setLayout(new java.awt.GridLayout(4, 3, 5, 3));
 
         jLabel14.setText("Número do Cartão:");
@@ -137,18 +140,25 @@ public class CompraTerrenos extends javax.swing.JFrame {
 
         jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
 
+        jPanel4.setMaximumSize(new java.awt.Dimension(350, 32767));
+        jPanel4.setMinimumSize(new java.awt.Dimension(350, 274));
         jPanel4.setLayout(new java.awt.GridLayout(6, 2, 8, 26));
 
         jLabel8.setText("Escolha o tipo de Terreno:");
         jPanel4.add(jLabel8);
 
-        cbTipoTerreno.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbTipoTerreno.setMaximumSize(new java.awt.Dimension(250, 32767));
+        cbTipoTerreno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTipoTerrenoActionPerformed(evt);
+            }
+        });
         jPanel4.add(cbTipoTerreno);
 
         jLabel9.setText("Escolha o Tipo de Decoração:");
         jPanel4.add(jLabel9);
 
-        cbTipoDecoracao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbTipoDecoracao.setMaximumSize(new java.awt.Dimension(250, 32767));
         jPanel4.add(cbTipoDecoracao);
 
         jLabel10.setText("Valor total:");
@@ -160,7 +170,7 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jLabel12.setText("Número de Parcelas:");
         jPanel4.add(jLabel12);
 
-        cbNumeroParcela.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbNumeroParcela.setMaximumSize(new java.awt.Dimension(250, 32767));
         jPanel4.add(cbNumeroParcela);
 
         jLabel13.setText("Com % de Juros Insignificantes.");
@@ -172,6 +182,7 @@ public class CompraTerrenos extends javax.swing.JFrame {
         jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.PAGE_AXIS));
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Tamanho e Proporções: "));
+        jPanel6.setMaximumSize(new java.awt.Dimension(350, 2147483647));
         jPanel6.setLayout(new java.awt.BorderLayout());
 
         jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 102), 5));
@@ -222,7 +233,7 @@ public class CompraTerrenos extends javax.swing.JFrame {
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(118, Short.MAX_VALUE)
+                .addContainerGap(100, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel5)
@@ -287,6 +298,10 @@ public class CompraTerrenos extends javax.swing.JFrame {
     private void edComprimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edComprimentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edComprimentoActionPerformed
+
+    private void cbTipoTerrenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTipoTerrenoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbTipoTerrenoActionPerformed
 
     /**
      * @param args the command line arguments

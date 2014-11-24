@@ -22,37 +22,37 @@ public class Terreno implements Serializable, VoConstante {
 
     @Column
     private String tipoTerreno;
-  
+
     @Column
     private String tipoDecoracao;
-  
+
     @Column
     private double total;
-   
+
     @Column
     private int parcelas;
-  
+
     @Column
     private double juros;
- 
+
     @Column
     private double largura;
-  
+
     @Column
     private double comprimento;
- 
+
     @Column
     private String numeroCartao;
- 
+
     @Column
     private String nomeCartao;
-  
+
     @Column
     private int numeroSegurancaCartao;
- 
+
     @Column
     private String dataValidade;
- 
+
     @Column
     private boolean presente;
 
@@ -166,6 +166,10 @@ public class Terreno implements Serializable, VoConstante {
     @Override
     public int getIdConstante() {
         return getId();
+    }
+
+    public double getMetrosQuadrados() {
+        return getComprimento() * getLargura();
     }
 
 }

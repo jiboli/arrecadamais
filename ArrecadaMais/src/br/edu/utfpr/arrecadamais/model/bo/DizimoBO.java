@@ -7,20 +7,17 @@ package br.edu.utfpr.arrecadamais.model.bo;
 
 import br.edu.utfpr.arrecadamais.controller.ControleClasseCRUD;
 import br.edu.utfpr.arrecadamais.model.dao.DAODinamico;
-import br.edu.utfpr.arrecadamais.model.vo.Terreno;
+import br.edu.utfpr.arrecadamais.model.vo.Dizimo;
+import br.edu.utfpr.arrecadamais.model.vo.Dizimo;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- *
- * @author torto
- */
-public class TerrenoBO implements ControleClasseCRUD<Terreno> {
+public class DizimoBO implements ControleClasseCRUD<Dizimo> {
 
-    private DAODinamico<Terreno> dao = new DAODinamico<Terreno>();
+    private DAODinamico<Dizimo> dao = new DAODinamico<Dizimo>();
 
     @Override
-    public Terreno inserir(Terreno objeto) {
+    public Dizimo inserir(Dizimo objeto) {
         try {
             objeto = dao.inserir(objeto);
         } catch (SQLException ex) {
@@ -31,7 +28,7 @@ public class TerrenoBO implements ControleClasseCRUD<Terreno> {
     }
 
     @Override
-    public boolean excluir(Terreno objeto) {
+    public boolean excluir(Dizimo objeto) {
         boolean retorno = false;
         try {
             retorno = dao.excluir(objeto);
@@ -42,7 +39,7 @@ public class TerrenoBO implements ControleClasseCRUD<Terreno> {
     }
 
     @Override
-    public Terreno alterar(Terreno objeto) {
+    public Dizimo alterar(Dizimo objeto) {
         try {
             dao.alterar(objeto);
         } catch (SQLException ex) {
@@ -52,10 +49,10 @@ public class TerrenoBO implements ControleClasseCRUD<Terreno> {
     }
 
     @Override
-    public List<Terreno> buscarTotal() {
-        List<Terreno> listaRetorno = null;
+    public List<Dizimo> buscarTotal() {
+        List<Dizimo> listaRetorno = null;
         try {
-            listaRetorno = (List<Terreno>) dao.buscarListaByWhere(Terreno.class, "");
+            listaRetorno = (List<Dizimo>) dao.buscarListaByWhere(Dizimo.class, "");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -64,21 +61,21 @@ public class TerrenoBO implements ControleClasseCRUD<Terreno> {
     }
 
     @Override
-    public Terreno buscarByID(int ID) {
-        Terreno retorno = null;
+    public Dizimo buscarByID(int ID) {
+        Dizimo retorno = null;
         try {
-            retorno = (Terreno) dao.buscarById(Terreno.class, ID);
+            retorno = (Dizimo) dao.buscarById(Dizimo.class, ID);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return retorno;
     }
     
-    public List<Terreno> buscarComFiltroGeral(String filtro){
-         List<Terreno> retorno = null;
+    public List<Dizimo> buscarComFiltroGeral(String filtro){
+         List<Dizimo> retorno = null;
         StringBuilder where = new StringBuilder();
 
-        where.append("tipoTerreno like '%");
+        where.append("tipoDizimo like '%");
         where.append(filtro);
         where.append("%' OR tipoDecoracao like '%");
         where.append(filtro);
@@ -99,9 +96,9 @@ public class TerrenoBO implements ControleClasseCRUD<Terreno> {
 
         try {
             if (filtro.isEmpty()) {
-                retorno = (List<Terreno>) dao.buscarListaByWhere(Terreno.class, "");
+                retorno = (List<Dizimo>) dao.buscarListaByWhere(Dizimo.class, "");
             } else {
-                retorno = (List<Terreno>) dao.buscarListaByWhere(Terreno.class, where.toString());
+                retorno = (List<Dizimo>) dao.buscarListaByWhere(Dizimo.class, where.toString());
             }
         } catch (Exception e) {
             e.printStackTrace();

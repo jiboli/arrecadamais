@@ -9,10 +9,6 @@ package br.edu.utfpr.arrecadamais.controller.transacoes;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author torto
- */
 public enum ECompraTerreno {
     
     TIPOTERRENO {
@@ -32,7 +28,24 @@ public enum ECompraTerreno {
         @Override
         List<String> getListaTipoDescricao() {
              List<String> retorno = new ArrayList<>();
-            retorno.add("");
+            retorno.add("Coberta de ouro");
+            retorno.add("Com a pomba branca do espirito santo");
+            retorno.add("Com uma cruz para simular a morte de cristo");
+                 
+            
+            return retorno;
+        }
+    }, PARCELAS {
+
+        @Override
+        List<String> getListaTipoDescricao() {
+            List<String> retorno = new ArrayList<>();
+            retorno.add("1");
+            retorno.add("2");
+            retorno.add("3");
+            retorno.add("4");
+            retorno.add("5");
+            
             
             return retorno;
         }

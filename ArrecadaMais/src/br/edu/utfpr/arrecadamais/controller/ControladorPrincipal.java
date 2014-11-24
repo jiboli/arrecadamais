@@ -12,6 +12,8 @@ import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFieis;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFrase;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaPastor;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaTemplo;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaTerrenos;
+import br.edu.utfpr.arrecadamais.controller.transacoes.ControladorCadastroDizimo;
 import br.edu.utfpr.arrecadamais.controller.transacoes.ControladorCompraTerreno;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,7 +28,7 @@ public class ControladorPrincipal {
     public static void main(String[] args){
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            new ControladorTelaPrincipal();
+//            new ControladorTelaPrincipal();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -48,9 +50,14 @@ public class ControladorPrincipal {
 //        ControladorListaFrase lista = new ControladorListaFrase();
 //        lista.abrirTela();
         
-        ControladorCompraTerreno cadastro = new ControladorCompraTerreno(null);
-        cadastro.abrirTela();
+//        ControladorCompraTerreno cadastro = new ControladorCompraTerreno(null);
+//        cadastro.abrirTela();
         
+//        ControladorListaTerrenos lista = new ControladorListaTerrenos();
+//        lista.abrirTela();
+        
+        ControladorCadastroDizimo cadastro = new ControladorCadastroDizimo(null);
+        cadastro.abrirDizimo();
     }
     
 }

@@ -6,6 +6,13 @@
 
 package br.edu.utfpr.arrecadamais.view.views;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author JoãoHenrique
@@ -89,7 +96,7 @@ public class ViewTerrenos extends javax.swing.JFrame {
         jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/media/ViewTerrenos.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/utfpr/arrecadamais/view/media/ViewFiel.png"))); // NOI18N
         jPanel6.add(jLabel1);
 
         jPanel3.add(jPanel6);
@@ -180,4 +187,110 @@ public class ViewTerrenos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbTabela;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtBuscar() {
+        return btBuscar;
+    }
+
+    public void setBtBuscar(JButton btBuscar) {
+        this.btBuscar = btBuscar;
+    }
+
+    public JButton getBtFechar() {
+        return btFechar;
+    }
+
+    public void setBtFechar(JButton btFechar) {
+        this.btFechar = btFechar;
+    }
+
+    public JButton getBtInserir() {
+        return btInserir;
+    }
+
+    public void setBtInserir(JButton btInserir) {
+        this.btInserir = btInserir;
+    }
+
+    public JTextField getEdtBuscar() {
+        return edtBuscar;
+    }
+
+    public void setEdtBuscar(JTextField edtBuscar) {
+        this.edtBuscar = edtBuscar;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JPanel getjPanel4() {
+        return jPanel4;
+    }
+
+    public void setjPanel4(JPanel jPanel4) {
+        this.jPanel4 = jPanel4;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public void setjPanel5(JPanel jPanel5) {
+        this.jPanel5 = jPanel5;
+    }
+
+    public JPanel getjPanel6() {
+        return jPanel6;
+    }
+
+    public void setjPanel6(JPanel jPanel6) {
+        this.jPanel6 = jPanel6;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getTbTabela() {
+        return tbTabela;
+    }
+
+    public void setTbTabela(JTable tbTabela) {
+        this.tbTabela = tbTabela;
+    }
+        
+        
 }
