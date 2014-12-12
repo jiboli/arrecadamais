@@ -1,6 +1,8 @@
 package br.edu.utfpr.arrecadamais.controller.lista;
 
 import br.edu.utfpr.arrecadamais.controller.ControladorCadastroFieis;
+import br.edu.utfpr.arrecadamais.controller.transacoes.ControladorCadastroCeo;
+import br.edu.utfpr.arrecadamais.controller.transacoes.ControladorCadastroDizimo;
 import br.edu.utfpr.arrecadamais.model.bo.FieisBO;
 import br.edu.utfpr.arrecadamais.model.vo.Fieis;
 import br.edu.utfpr.arrecadamais.view.views.ViewFiel;
@@ -89,7 +91,25 @@ public class ControladorListaFieis {
                 fecharJanela();
             }
         });
+        
+        telaFiel.getBtnCEO().addActionListener(new ActionListener() {
 
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ControladorCadastroCeo cad_ceo = new ControladorCadastroCeo(null, listaTotal.get(telaFiel.getTbTabela().getSelectedRow()));
+            }
+        });
+        
+        telaFiel.getBtnDizimo().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ControladorCadastroDizimo cad_diz = new ControladorCadastroDizimo(null, listaTotal.get(telaFiel.getTbTabela().getSelectedRow()));
+            }
+        });
+
+        
+        
     }
     
     private void fecharJanela(){

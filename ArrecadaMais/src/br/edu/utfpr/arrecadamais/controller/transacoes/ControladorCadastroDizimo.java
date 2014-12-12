@@ -10,6 +10,7 @@ import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaDizimo;
 
 import br.edu.utfpr.arrecadamais.model.bo.DizimoBO;
 import br.edu.utfpr.arrecadamais.model.vo.Dizimo;
+import br.edu.utfpr.arrecadamais.model.vo.Fieis;
 import br.edu.utfpr.arrecadamais.view.transacoes.TDizimo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +19,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFrame;
-
 
 /**
  *
@@ -29,14 +29,22 @@ public class ControladorCadastroDizimo {
     private TDizimo telaCadastro;
     private Dizimo dizimo;
     private DizimoBO dizimoBO;
+    private Fieis fiel;
 
-    public ControladorCadastroDizimo(Dizimo dizimo) {
+    public ControladorCadastroDizimo(Dizimo dizimo, Fieis fiel) {
         //tela cadastro fieles
         this.telaCadastro = new TDizimo();
+        if (fiel != null) {
+            this.fiel = fiel;
+        } else {
+            this.fiel = dizimo.getFiel();
+        }
         this.telaCadastro.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.dizimo = dizimo;
         dizimoBO = new DizimoBO();
-    
+        
+        telaCadastro.getEdNomeCliente().setEnabled(false);
+
         if (dizimo == null) {
             //cria um novo fiel, pq eh de add um
             dizimo = new Dizimo();
@@ -55,17 +63,15 @@ public class ControladorCadastroDizimo {
 //
 //            }
 //        });
-
         //evento salvar fiel
         this.telaCadastro.getjButton1().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 salvar(); // salva um fiel
-               abrirTelaGrid();
+                abrirTelaGrid();
             }
         });
 
-       
     }
 
     private void abrirTelaGrid() {
@@ -84,21 +90,20 @@ public class ControladorCadastroDizimo {
 
         //insere o objeto no banco
         bo.inserir(dizimo);
-        
+
     }
 
     public void carregaDadosTela(Dizimo objeto) {
-    
+
         this.telaCadastro.getEtNomeCartao().setText(objeto.getNomeCartao());
         this.telaCadastro.getEtNumeroCartao().setText(objeto.getNumeroCartao());
-        this.telaCadastro.getEdCodigoSeguraca().setText(objeto.getCodSeguranca()+"");
+        this.telaCadastro.getEdCodigoSeguraca().setText(objeto.getCodSeguranca() + "");
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String datestring = dateFormat.format(objeto.getDataValidade());
         this.telaCadastro.getEdDataValidade().setText(datestring);
-        this.telaCadastro.getjTextField1().setText(objeto.getValorAdicionar()+"");
-        this.telaCadastro.getjTextField2().setText(objeto.getValorMin()+"");
-        this.telaCadastro.getEdNomeCliente().setText(objeto.getNomeCliente());
-
+        this.telaCadastro.getjTextField1().setText(objeto.getValorAdicionar() + "");
+        this.telaCadastro.getjTextField2().setText(objeto.getValorMin() + "");
+        this.telaCadastro.getEdNomeCliente().setText(objeto.getFiel().getNome());
 
     }
 
@@ -107,7 +112,7 @@ public class ControladorCadastroDizimo {
         if (dizimo == null) {
             dizimo = new Dizimo();
         }
-       
+
         DateFormat formatter = new SimpleDateFormat("MM/YY");
         Date date = null;
         try {
@@ -121,7 +126,7 @@ public class ControladorCadastroDizimo {
         dizimo.setNumeroCartao(this.telaCadastro.getEtNumeroCartao().getText());
         dizimo.setValorAdicionar(Double.parseDouble(this.telaCadastro.getjTextField1().getText()));
         dizimo.setValorMin(Double.parseDouble(this.telaCadastro.getjTextField2().getText()));
-        dizimo.setNomeCliente(this.telaCadastro.getEdNomeCliente().getText());
+        dizimo.setFiel(fiel);
 
         return dizimo;
     }

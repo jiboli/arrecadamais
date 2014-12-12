@@ -55,6 +55,7 @@ public class ControladorListaTerrenos {
                 if (me.getClickCount() == 2) {
                     int row = table.getSelectedRow();
                     ControladorCompraTerreno cadastro = new ControladorCompraTerreno(listaTotal.get(row));
+                    cadastro.abrirTela();
                     fecharJanela();
                 }
             }
@@ -66,6 +67,7 @@ public class ControladorListaTerrenos {
             public void actionPerformed(ActionEvent e) {
                 
                 ControladorCompraTerreno cadastro = new ControladorCompraTerreno(null);
+                cadastro.abrirTela();
                 fecharJanela();
             }
         });

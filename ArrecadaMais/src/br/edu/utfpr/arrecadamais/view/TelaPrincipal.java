@@ -58,6 +58,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mnCEO = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         mnSobre = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        menuClientesRelatorios = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Arrecada Mais v.6.6.6");
@@ -162,6 +164,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jMenu2.setText("Relatório");
+
+        menuClientesRelatorios.setText("Clientes");
+        menuClientesRelatorios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuClientesRelatoriosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuClientesRelatorios);
+
+        jMenuBar1.add(jMenu2);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -186,6 +200,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void btnDizimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDizimoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDizimoActionPerformed
+
+    private void menuClientesRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuClientesRelatoriosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuClientesRelatoriosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,11 +250,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnTerreno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JMenuItem menuClientesRelatorios;
     private javax.swing.JMenuItem mnCEO;
     private javax.swing.JMenuItem mnDizimo;
     private javax.swing.JMenuItem mnFiel;
@@ -431,5 +451,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public void setMnTerreno(JMenuItem mnTerreno) {
         this.mnTerreno = mnTerreno;
     }
+
+    public JMenuItem getMenuClientesRelatorios() {
+        return menuClientesRelatorios;
+    }
+
+    public void setMenuClientesRelatorios(JMenuItem menuClientesRelatorios) {
+        this.menuClientesRelatorios = menuClientesRelatorios;
+    }
+    
+    
     
 }

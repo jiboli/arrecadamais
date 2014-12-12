@@ -311,6 +311,23 @@ public class ViewFiel extends javax.swing.JFrame {
     public void setTbTabela(JTable tbTabela) {
         this.tbTabela = tbTabela;
     }
+
+    public JButton getBtnCEO() {
+        return btnCEO;
+    }
+
+    public void setBtnCEO(JButton btnCEO) {
+        this.btnCEO = btnCEO;
+    }
+
+    public JButton getBtnDizimo() {
+        return btnDizimo;
+    }
+
+    public void setBtnDizimo(JButton btnDizimo) {
+        this.btnDizimo = btnDizimo;
+    }
+    
     
     
         

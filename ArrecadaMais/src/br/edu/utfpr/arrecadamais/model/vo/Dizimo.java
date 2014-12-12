@@ -12,6 +12,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -41,6 +43,10 @@ public class Dizimo implements Serializable, VoConstante{
     
     @Column
     private int codSeguranca;
+    
+    @ManyToOne
+    @JoinColumn(name = "fieis_id", insertable = true, updatable = false)
+    private Fieis fiel;
     
      @Column(name = "data_validade")
     @Temporal(TemporalType.DATE)
@@ -116,6 +122,14 @@ public class Dizimo implements Serializable, VoConstante{
 
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
+    }
+
+    public Fieis getFiel() {
+        return fiel;
+    }
+
+    public void setFiel(Fieis fiel) {
+        this.fiel = fiel;
     }
     
 }

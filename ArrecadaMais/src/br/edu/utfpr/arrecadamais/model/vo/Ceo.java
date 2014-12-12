@@ -12,6 +12,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -35,6 +37,10 @@ public class Ceo implements Serializable, VoConstante{
     
     @Column
     private String nomeCartao;
+    
+    @ManyToOne
+    @JoinColumn(name = "fieis_id", insertable = true, updatable = false)
+    private Fieis fiel;
     
     @Column
     private int codSeguranca;
@@ -106,5 +112,12 @@ public class Ceo implements Serializable, VoConstante{
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
     }
-    
+
+    public Fieis getFiel() {
+        return fiel;
+    }
+
+    public void setFiel(Fieis fiel) {
+        this.fiel = fiel;
+    }
 }

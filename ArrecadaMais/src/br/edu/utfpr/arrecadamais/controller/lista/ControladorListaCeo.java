@@ -52,20 +52,12 @@ public class ControladorListaCeo {
                 if (me.getClickCount() == 2) {
                     int row = table.getSelectedRow();
                     fecharJanela();
-                    ControladorCadastroCeo cadastro = new ControladorCadastroCeo(listaTotal.get(row));
+                    ControladorCadastroCeo cadastro = new ControladorCadastroCeo(listaTotal.get(row), null);
                 }
             }
         });
 
-        telaCeo.getBtInserir().addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                telaCeo.setVisible(false); //you can't see me!
-                telaCeo.dispose();
-                ControladorCadastroCeo cadastro = new ControladorCadastroCeo(null);
-            }
-        });
+        
 
 //        telaCeo.getBtExcluir().addActionListener(new ActionListener() {
 //

@@ -137,11 +137,6 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btInserir">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Inserir"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="btFechar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fechar"/>

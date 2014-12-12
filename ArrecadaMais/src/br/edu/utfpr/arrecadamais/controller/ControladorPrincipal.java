@@ -30,7 +30,7 @@ public class ControladorPrincipal {
     public static void main(String[] args){
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            new ControladorTelaPrincipal();
+            new ControladorTelaPrincipal();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -64,8 +64,8 @@ public class ControladorPrincipal {
 //        ControladorListaDizimo lista = new ControladorListaDizimo();
 //        lista.abrirTela();
         
-        ControladorListaCeo lista = new ControladorListaCeo();
-        lista.abrirTela();
+//        ControladorListaCeo lista = new ControladorListaCeo();
+//        lista.abrirTela();
     }
     
 }

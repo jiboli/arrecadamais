@@ -6,10 +6,13 @@
 
 package br.edu.utfpr.arrecadamais.controller;
 
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaCeo;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaDizimo;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFieis;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaFrase;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaPastor;
 import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaTemplo;
+import br.edu.utfpr.arrecadamais.controller.lista.ControladorListaTerrenos;
 import br.edu.utfpr.arrecadamais.view.TelaPrincipal;
 import br.edu.utfpr.arrecadamais.view.views.ViewCEO;
 import br.edu.utfpr.arrecadamais.view.views.ViewDizimo;
@@ -36,18 +39,16 @@ public class ControladorTelaPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //cancelar();//fecha a tela
-               ViewTerrenos terreno = new ViewTerrenos();
-                terreno.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                terreno.setVisible(true);
+                ControladorListaTerrenos terrenos = new ControladorListaTerrenos();
+                terrenos.abrirTela();
             }
         });
         this.telaP.getBtnTerreno().addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                ViewTerrenos terreno = new ViewTerrenos();
-                terreno.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                terreno.setVisible(true);
+                ControladorListaTerrenos terrenos = new ControladorListaTerrenos();
+                terrenos.abrirTela();
             }           
             
         });
@@ -146,9 +147,8 @@ public class ControladorTelaPrincipal {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                ViewDizimo dizimo = new ViewDizimo();
-                dizimo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                dizimo.setVisible(true);
+                ControladorListaDizimo dizimo = new ControladorListaDizimo();
+                dizimo.abrirTela();
             }
             
         });
@@ -156,9 +156,8 @@ public class ControladorTelaPrincipal {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                ViewDizimo dizimo = new ViewDizimo();
-                dizimo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                dizimo.setVisible(true);
+                ControladorListaDizimo dizimo = new ControladorListaDizimo();
+                dizimo.abrirTela();
             }
             
         });
@@ -167,9 +166,8 @@ public class ControladorTelaPrincipal {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                ViewCEO ceo = new ViewCEO();
-                ceo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                ceo.setVisible(true);
+                ControladorListaCeo ceo = new ControladorListaCeo();
+                ceo.abrirTela();
             }
             
         });
@@ -177,11 +175,19 @@ public class ControladorTelaPrincipal {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                ViewCEO ceo = new ViewCEO();
-                ceo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                ceo.setVisible(true);
+                ControladorListaCeo ceo = new ControladorListaCeo();
+                ceo.abrirTela();
+                
             }
             
+        });
+        
+        this.telaP.getMenuClientesRelatorios().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               ControladorRelatorioClientes fieis = new ControladorRelatorioClientes();
+            }
         });
         
         telaP.setVisible(true);

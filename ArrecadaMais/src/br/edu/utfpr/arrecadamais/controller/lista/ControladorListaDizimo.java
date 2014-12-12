@@ -52,20 +52,11 @@ public class ControladorListaDizimo {
                 if (me.getClickCount() == 2) {
                     int row = table.getSelectedRow();
                     fecharJanela();
-                    ControladorCadastroDizimo cadastro = new ControladorCadastroDizimo(listaTotal.get(row));
+                    ControladorCadastroDizimo cadastro = new ControladorCadastroDizimo(listaTotal.get(row), null);
                 }
             }
         });
 
-        telaDizimo.getBtInserir().addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                telaDizimo.setVisible(false); //you can't see me!
-                telaDizimo.dispose();
-                ControladorCadastroDizimo cadastro = new ControladorCadastroDizimo(null);
-            }
-        });
 
 //        telaDizimo.getBtExcluir().addActionListener(new ActionListener() {
 //

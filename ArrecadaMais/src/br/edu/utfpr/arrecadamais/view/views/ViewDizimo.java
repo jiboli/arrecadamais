@@ -46,7 +46,6 @@ public class ViewDizimo extends javax.swing.JFrame {
         edtBuscar = new javax.swing.JTextField();
         btBuscar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        btInserir = new javax.swing.JButton();
         btFechar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -111,9 +110,6 @@ public class ViewDizimo extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, java.awt.BorderLayout.NORTH);
 
-        btInserir.setText("Inserir");
-        jPanel4.add(btInserir);
-
         btFechar.setText("Fechar");
         jPanel4.add(btFechar);
 
@@ -162,7 +158,6 @@ public class ViewDizimo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btBuscar;
     private javax.swing.JButton btFechar;
-    private javax.swing.JButton btInserir;
     private javax.swing.JTextField edtBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -272,12 +267,5 @@ public class ViewDizimo extends javax.swing.JFrame {
         this.tbTabela = tbTabela;
     }
 
-    public JButton getBtInserir() {
-        return btInserir;
-    }
-
-    public void setBtInserir(JButton btInserir) {
-        this.btInserir = btInserir;
-    }
         
 }
